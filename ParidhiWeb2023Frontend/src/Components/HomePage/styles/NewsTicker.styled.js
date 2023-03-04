@@ -6,11 +6,14 @@ const NewsTickerContainer = styled.section`
   align-items: center;
   flex-direction: column;
   width: 100vw;
+  height: 100px;
+  overflow: hidden;
+  margin-top: 30px;
   .marque {
-    font-size: 80px;
+    /* margin-top: 50px; */
+    font-size: 50px;
     text-transform: uppercase;
     font-weight: 800;
-    margin-bottom: -80px;
     /* text-shadow: 0 0 12px #070ca4; */
   }
   .marque span {
@@ -19,7 +22,7 @@ const NewsTickerContainer = styled.section`
 
   }
   div {
-    width: 600px;
+    width: 300px;
     height: 2px;
     background-color: #fff;
   }

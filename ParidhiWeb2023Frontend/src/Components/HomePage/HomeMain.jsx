@@ -3,6 +3,7 @@ import HomepageContainer from "./styles/HomeMain.styled";
 import gridImg from "./assets/grid.svg";
 import NewsTicker from "./components/NewsTicker";
 import NavbarMain from "../Navbar/NavbarMain";
+import Hero from "./components/Hero";
 const HomeMain = () => {
   const moveLight = (e) => {
     const light = document.querySelector(".light");
@@ -21,7 +22,8 @@ const HomeMain = () => {
           <div className="grid"></div>
         </div>
         <div className="text">
-          <NewsTicker />
+          <Hero/>
+          {/* <NewsTicker/> */}
         </div>
       </HomepageContainer>
     </>

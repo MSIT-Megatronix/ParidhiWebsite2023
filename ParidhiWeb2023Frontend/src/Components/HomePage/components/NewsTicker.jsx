@@ -6,10 +6,9 @@ const NewsTicker = () => {
     <NewsTickerContainer>
       <div></div>
       <marquee
-        width="100%"
+        // width="100%"
         behavior="scroll"
         direction="left"
-        height="200px"
         scrollamount="30"
         className="marque"
       >

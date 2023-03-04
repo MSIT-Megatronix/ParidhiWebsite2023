@@ -1,7 +1,5 @@
 import styled from "styled-components";
 const HomepageContainer = styled.div`
-  /* background: #381818; */
-  /* display: #f20a0a; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +22,8 @@ const HomepageContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20em;
-    height: 20em;
+    width: 30em;
+    height: 30em;
     border-radius: 50%;
     filter: blur(20px);
     background: linear-gradient(90deg, #00eaff 0%, #002b43 100%);
@@ -47,7 +45,11 @@ const HomepageContainer = styled.div`
     }
   }
   .text {
+    width: 100vw;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: #fff;
   }
 `;
