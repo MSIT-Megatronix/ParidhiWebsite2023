@@ -32,11 +32,29 @@ const HeroContainer = styled.section`
     padding: 8px;
     transition: 0.3s;
   }
-  .socials ul li:hover{
+  .socials ul li:hover {
+  }
+
+  .fb:hover {
+    /* color: #4c88ff; */
     margin-top: -10px;
     cursor: pointer;
   }
-  
+  .ldin:hover {
+    color: #00a6ff;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+  .ytb:hover {
+    color: #ff0000;
+    margin-top: -10px;
+    cursor: pointer;
+  }
+  .insta:hover {
+    color: #fcaf45;
+    margin-top: -10px;
+    cursor: pointer;
+  }
   @media (max-height: 750px) {
     .socials {
       top: 260px;
@@ -47,20 +65,19 @@ const HeroContainer = styled.section`
       top: 230px;
     }
   }
-  @media (min-width:900px) {
-    .socials{
-        top: 380px;
+  @media (min-width: 900px) {
+    .socials {
+      top: 395px;
     }
-    .socials ul{
-        flex-direction: row;
+    .socials ul {
+      flex-direction: row;
     }
-    .line{
-        height:2px;
-        width:30px;
+    .line {
+      height: 2px;
+      width: 30px;
     }
-    .socials ul li{
-        padding:10px 15px;
-
+    .socials ul li {
+      padding: 10px 15px;
     }
   }
   @media (min-width: 760px) {
