@@ -1,2 +1,5 @@
 import styled from "styled-components";
-import 
+const BiggerCardContainer = styled.section`
+
+`;
+export default BiggerCardContainer;
