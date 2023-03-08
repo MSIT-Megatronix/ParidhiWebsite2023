@@ -8,6 +8,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import NavElem from "./Scripts/NavElements";
 import back from "./assets/back.png";
+import { NavLink } from "react-router-dom";
 const SideModalVariant = {
   hidden: { opacity: 0, x: -100 },
   transition: { type: "spring", stiffness: 50 },
@@ -49,9 +50,16 @@ const NavbarMain = () => {
             <ul className="nav_all">
               {NavElem.map((data, index) => {
                 return (
-                  <motion.li variants={item} key={index}>
-                    {data.nav}
-                  </motion.li>
+                  <NavLink
+                    className="nav_links"
+                    to={data.link}
+                    style={({ isActive }) => ({
+                      textShadow: isActive ? "0px 0px 5px #00eaff" : "",
+                    })}
+                    key={index}
+                  >
+                    <motion.li variants={item}>{data.nav}</motion.li>
+                  </NavLink>
                 );
               })}
             </ul>
@@ -79,9 +87,17 @@ const NavbarMain = () => {
               <ul className="nav_all">
                 {NavElem.map((data, index) => {
                   return (
-                    <motion.li variants={item} key={index}>
-                      {data.nav}
-                    </motion.li>
+                    <NavLink
+                      className="nav_links"
+                      to={data.link}
+                      style={({ isActive }) => ({
+                        textShadow: isActive ? "0px 0px 5px #00eaff" : "",
+                        letterSpacing: isActive ? "2px" : "",
+                      })}
+                      key={index}
+                    >
+                      <motion.li variants={item}>{data.nav}</motion.li>
+                    </NavLink>
                   );
                 })}
               </ul>

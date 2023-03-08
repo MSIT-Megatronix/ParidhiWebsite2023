@@ -1,8 +1,9 @@
 import styled from "styled-components";
 const NavbarContainer = styled.nav`
   position: absolute;
+  top: 0;
   width: 100vw;
-  z-index: 1;
+  z-index: 3;
   .nav_div {
     display: flex;
     align-items: center;
@@ -10,7 +11,7 @@ const NavbarContainer = styled.nav`
   }
   overflow: hidden;
   .nav_all li {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     font-family: "K2D", sans-serif;
     /* height: 100vh; */
@@ -48,8 +49,7 @@ const NavbarContainer = styled.nav`
   .btn2 {
     display: none;
   }
-
-  @media (min-width: 760px) {
+  @media (min-width: 900px) {
     .btn2 {
       display: block;
     }
@@ -68,6 +68,7 @@ const NavbarContainer = styled.nav`
       left: 0;
     }
     .nav_all li {
+      font-size: 1.2rem;
       padding: 0px 10px;
       -webkit-text-stroke: 0.6px #fff;
       font-weight: 600;
@@ -85,6 +86,7 @@ const NavbarContainer = styled.nav`
       margin-top: -5px;
       text-shadow: 0px 0px 5px #00eaff;
       letter-spacing: 2px;
+      
     }
     li::after {
       content: "";
@@ -102,7 +104,18 @@ const NavbarContainer = styled.nav`
     li:hover::after {
       height: 3px;
     }
-    
+    /* .active::after {
+    content: "";
+    position: relative;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 3px;
+    width: 35px;
+    text-align: center;
+    background-color: #00eaff;
+    transition: height 250ms ease-in-out;
+  } */
     @keyframes backSlide {
       10% {
         background-position: 0px 200px;
@@ -146,12 +159,26 @@ const NavbarContainer = styled.nav`
       color: #fff;
     }
   }
+  
+  .active::after {
+    content: "";
+    position: relative;
+    bottom: 0;
+    left: 10px;
+    display: block;
+    height: 3px;
+    width: 35px;
+    text-align: center;
+    background-color: #00eaff;
+    transition: height 250ms ease-in-out;
+  }
 `;
 
 const SideModalContainer = styled.section`
   position: absolute;
+  top: 0;
   width: 100vw;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -173,6 +200,18 @@ const SideModalContainer = styled.section`
   }
   li:hover::after {
     height: 3px;
+  }
+  .active::after {
+    content: "";
+    position: relative;
+    bottom: 25px;
+    left: 30px;
+    display: block;
+    height: 3px;
+    width: 35px;
+    text-align: center;
+    background-color: #00eaff;
+    transition: height 250ms ease-in-out;
   }
   .toggle {
     cursor: pointer;

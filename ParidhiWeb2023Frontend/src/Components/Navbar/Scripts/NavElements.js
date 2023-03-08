@@ -1,8 +1,8 @@
 const NavElem = [
-    {nav:"Events",link:"#"},
-    {nav:"Workshop",link:"#"},
-    {nav:"Pre-Paridhi Events",link:"#"},
-    {nav:"sponsor",link:"#"},
-    {nav:"Our Team",link:"#"},
+    {nav:"Events",link:"/events"},
+    {nav:"Workshop",link:"/workshop"},
+    {nav:"Pre-Paridhi-Events",link:"/pre_paridhi_events"},
+    {nav:"sponsor",link:"/sponsors"},
+    {nav:"Our Team",link:"/team"},
 ] 
 export default NavElem

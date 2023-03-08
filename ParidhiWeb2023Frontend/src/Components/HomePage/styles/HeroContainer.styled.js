@@ -10,12 +10,16 @@ const HeroContainer = styled.section`
     width: 80vw;
   }
   .socials {
-    position: absolute;
-
-    /* position: relative; */
+    /* position: absolute; */
     top: 325px;
     right: 10px;
   }
+  /* .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10vw;
+  } */
   .line {
     width: 2px;
     height: 30px;
@@ -32,42 +36,86 @@ const HeroContainer = styled.section`
     padding: 8px;
     transition: 0.3s;
   }
-  .socials ul li:hover {
+  .socials ul li a {
+    text-decoration: none;
+    color: #fff;
   }
-
-  .fb:hover {
-    /* color: #4c88ff; */
-    margin-top: -10px;
+  .btn:hover {
+    margin-left: -15px;
     cursor: pointer;
   }
-  .ldin:hover {
+  .btn:hover .fb {
+    color: #4c88ff;
+  }
+  .btn:hover .ldin {
     color: #00a6ff;
-    margin-top: -10px;
-    cursor: pointer;
   }
-  .ytb:hover {
+  .btn:hover .ytb {
     color: #ff0000;
-    margin-top: -10px;
-    cursor: pointer;
   }
-  .insta:hover {
+  .btn:hover .insta {
     color: #fcaf45;
-    margin-top: -10px;
-    cursor: pointer;
   }
-  @media (max-height: 750px) {
+  .chat-bot {
+    /* position: absolute; */
+    left: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: #000;
+    transition: 0.5s;
+  }
+  .chat-bot:hover {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  .chat-bot-mega {
+    z-index: 2;
+    border-radius: 10px;
+    border: none;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    height: 300px;
+    width: 280px;
+  }
+  .footer {
+    width: 100vw;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .chat-bot {
+    margin-bottom: -180px;
+    margin-left: 10px;
+  }
+  /* @media (max-height: 750px) {
     .socials {
       top: 260px;
     }
-  }
-  @media (max-height: 680px) {
+    .chat-bot{
+      bottom: -160px;
+    } 
+    .chat-bot-mega{
+      left: 50px;
+      top: 160px;
+    }
+  } */
+  /* @media (max-height: 680px) {
     .socials {
       top: 230px;
     }
-  }
+  } */
   @media (min-width: 900px) {
     .socials {
-      top: 395px;
+      top: 390px;
     }
     .socials ul {
       flex-direction: row;
@@ -84,6 +132,19 @@ const HeroContainer = styled.section`
     .countdown {
       width: 450px;
     }
+    .btn:hover {
+      margin-top: -10px;
+      margin-left: 0;
+    }
+    .chat-bot {
+      margin-bottom: 0px;
+    }
+    .chat-bot-mega{
+    }
+    /* .chat-bot-mega{
+      left: 50px;
+      top: 120px;
+    } */
   }
 `;
 const CountDownContainer = styled.div`

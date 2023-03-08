@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { HeroContainer } from "../styles/HeroContainer.styled";
 import CountdownTimer from "./CountDownTimer";
@@ -7,9 +7,17 @@ import YouTube from "@mui/icons-material/YouTube";
 import Facebook from "@mui/icons-material/FacebookRounded";
 import Instagram from "@mui/icons-material/Instagram";
 import LinkedIn from "@mui/icons-material/LinkedIn";
-
-const socialMedia = [{data: <Facebook />,cls:'fb'}, {data:<Instagram />,cls:"insta"}, {data:<LinkedIn />,cls:"ldin"}, {data:<YouTube />,cls:"ytb"}];
+import { useNavigate } from "react-router-dom";
+import ForumIcon from "@mui/icons-material/Forum";
+const socialMedia = [
+  { data: <Facebook />, cls: "fb" },
+  { data: <Instagram />, cls: "insta" },
+  { data: <LinkedIn />, cls: "ldin" },
+  { data: <YouTube />, cls: "ytb" },
+];
 const Hero = () => {
+  const Navigate = useNavigate();
+  const [chatbot, setchatbot] = useState(false);
   //   const LEFT_DAYS_IN_MS = 27 * 24 * 60 * 60 * 1000;
   //   var dt = new Date( "March 31, 2023 00:00:00" );
   const PADIDHI_START_DATE_IN_MS = new Date(
@@ -26,16 +34,38 @@ const Hero = () => {
         <div className="paridhi">
           <NewsTicker />
         </div>
-        <motion.div className="socials">
-          <ul>
-            <li>
-              <div className="line"></div>
-            </li>
-            {socialMedia.map((data, index) => {
-              return <li className={`btn ${data.cls}`} key={1+index}>{data.data}</li>;
-            })}
-          </ul>
-        </motion.div>
+        <div className="footer">
+          <button className="chat-bot" onClick={() => setchatbot(!chatbot)}>
+            <ForumIcon />
+          </button>
+          <motion.div className="socials">
+            <ul>
+              <li>
+                <div className="line"></div>
+              </li>
+              {socialMedia.map((data, index) => {
+                return (
+                  <li className={`btn`} key={1 + index}>
+                    <a
+                      className={`${data.cls}`}
+                      href="https://www.facebook.com/msitparidhi2022"
+                      target="#"
+                    >
+                      {data.data}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </motion.div>
+        </div>
+        {chatbot && (
+          <iframe
+            className="chat-bot-mega"
+            allow="microphone;"
+            src="https://console.dialogflow.com/api-client/demo/embedded/4cbd55d9-db0b-47c8-a0db-9ba40da60d02"
+          />
+        )}
       </HeroContainer>
     </>
   );

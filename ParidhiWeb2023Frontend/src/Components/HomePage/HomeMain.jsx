@@ -22,8 +22,7 @@ const HomeMain = () => {
           <div className="grid"></div>
         </div>
         <div className="text">
-          <Hero/>
-          {/* <NewsTicker/> */}
+          <Hero />
         </div>
       </HomepageContainer>
     </>

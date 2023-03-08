@@ -1,9 +1,52 @@
-import "./App.css";
-import HomeMain from "./Components/HomePage/HomeMain";
-
+// import "./App.css";
+import React from "react";
+import PreLoader from "./Components/HomePage/components/PreLoader";
+// import HomeMain from "./Components/HomePage/HomeMain";
+import { Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import NavbarMain from "./Components/Navbar/NavbarMain";
+import EventsMain from "./Components/EventsPage/EventsMain";
+const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
+const LazyEvents = React.lazy(() =>
+  import("./Components/EventsPage/EventsMain")
+);
 function App() {
-
-  return <HomeMain />;
+  // return <HomeMain />;
+  return (
+    <>
+      {/* <NavbarMain /> */}
+      {/* <BrowserRouter> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <React.Suspense fallback={<PreLoader />}>
+              <LazyHome />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/events"
+          element={
+            <React.Suspense fallback={<PreLoader />}>
+              <LazyEvents />
+            </React.Suspense>
+            // <EventsMain/>
+          }
+        />
+        {/* <Route
+            path="/events"
+            element={
+              <React.Suspense fallback={<PreLoader />}>
+                <NavbarMain />
+                <h1>events</h1>
+              </React.Suspense>
+            }
+          /> */}
+      </Routes>
+      {/* </BrowserRouter> */}
+    </>
+  );
 }
 
 export default App;
