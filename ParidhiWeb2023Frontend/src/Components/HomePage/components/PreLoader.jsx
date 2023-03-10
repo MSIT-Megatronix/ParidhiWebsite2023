@@ -15,7 +15,7 @@ const PreLoader = () => {
         }}
       >
         <video
-          style={{ height: "70%", width: "50%" }}
+          style={{ width: "300px",'@media(minWidth:600px)':{ width: "400px"} }}
           src={Thunder}
           autoPlay
           loop
@@ -27,4 +27,22 @@ const PreLoader = () => {
   );
 };
 
+const PageLoader=()=>{
+  return(
+    <div
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems:"center",
+          background: "#000",
+        }}
+      >
+        <img src={loading} alt="" />
+      </div>
+  )
+}
+
 export default PreLoader;
+export {PageLoader};

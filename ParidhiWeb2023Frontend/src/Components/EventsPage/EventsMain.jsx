@@ -4,6 +4,7 @@ import gridImg from "../HomePage/assets/grid.svg";
 import { EventspageContainer } from "./styles/EventspageContainer.styled";
 import Cards from "./components/Cards";
 import { motion } from "framer-motion";
+import { CardData } from "./StaticJS/CardData";
 const EventsMain = () => {
   const moveLight = (e) => {
     const light = document.querySelector(".light");
@@ -47,16 +48,19 @@ const EventsMain = () => {
               setOpen(true);
             }}
             variants={CardVariant}
-            initial='hidden'
-            animate='show'
-            
+            initial="hidden"
+            animate="show"
           >
-            <Cards bt={"up"} />
-            <Cards bt={"up"} />
-            <Cards bt={"up"} />
-            <Cards bt={"bt"} />
-            <Cards bt={"bt"} />
-            <Cards bt={"bt"} />
+            {CardData.map((data, index) => {
+              return (
+                <Cards
+                  bt={data.class}
+                  image={data.image}
+                  domain={data.name}
+                  key={index}
+                />
+              );
+            })}
           </motion.div>
           {open && <div></div>}
         </div>

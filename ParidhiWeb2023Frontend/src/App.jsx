@@ -1,6 +1,7 @@
 // import "./App.css";
 import React from "react";
 import PreLoader from "./Components/HomePage/components/PreLoader";
+import { PageLoader } from "./Components/HomePage/components/PreLoader";
 // import HomeMain from "./Components/HomePage/HomeMain";
 import { Routes, Route } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -28,21 +29,21 @@ function App() {
         <Route
           path="/events"
           element={
-            <React.Suspense fallback={<PreLoader />}>
+            <React.Suspense fallback={<PageLoader />}>
               <LazyEvents />
             </React.Suspense>
             // <EventsMain/>
           }
         />
-        {/* <Route
-            path="/events"
+        <Route
+            path="/team"
             element={
-              <React.Suspense fallback={<PreLoader />}>
-                <NavbarMain />
-                <h1>events</h1>
+              <React.Suspense fallback={<PageLoader />}>
+                {/* <NavbarMain /> */}
+              {/* <LazyEvents/> */}
               </React.Suspense>
             }
-          /> */}
+          />
       </Routes>
       {/* </BrowserRouter> */}
     </>

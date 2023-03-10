@@ -88,15 +88,22 @@ export const EventspageContainer = styled.section`
 `;
 
 export const CardsWrapper = styled.div`
+
   .card {
+    padding: 5px;
     border: 3px solid #fff;
-    background-color: #121212;
+    /* background-color: #12121273; */
     margin: 40px 20px;
     width: 280px;
-    height: 380px;
-    box-shadow: 0px 0px 10px #ffffff8b;
+    height: 350px;
+    /* box-shadow: 0px 0px 10px #ffffff8b; */
     transition: 0.5s;
     border-radius: 20px 0px 20px 0px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    /* background-color: rgba(17, 25, 40, 0.75); */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
     /* rotate: 20deg; */
   }
   .domImgDiv {
@@ -112,16 +119,27 @@ export const CardsWrapper = styled.div`
     transition: 0.4s;
   }
   .card:hover {
-    box-shadow: 0px 0px 20px #ffffff8b;
+    box-shadow: 0px 0px 10px #ffffff8b;
     margin-top: -50px;
-    border-radius: 0px 20px 0px 20px;
+    /* border-radius: 0px 20px 0px 20px; */
   }
   /* .card:hover .domainImg {
     width: 240px;
   } */
+  .event-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .arrow-event-btn{
+    /* background: #fff; */
+    width: 20px;
+  }
   .corner-top {
     /* position: absolute; */
-    margin-top: -100px;
+    margin-top: -40px;
     margin-right: 150px;
     height: 40px;
     width: 100px;
@@ -133,10 +151,14 @@ export const CardsWrapper = styled.div`
     justify-content: center;
   }
   .logo {
+    
+
     height: 50px;
     width: 50px;
   }
   .details {
+    
+
     height: 90px;
     width: 95%;
     margin-top: 20px;
@@ -144,6 +166,8 @@ export const CardsWrapper = styled.div`
     background: #ffffffcd;
   }
   .heading {
+    
+
     padding: 10px 5px;
     font-weight: 800;
     color: #1b1b1b;
@@ -151,6 +175,8 @@ export const CardsWrapper = styled.div`
     text-transform: uppercase;
   }
   .domainDetails {
+    
+
     font-weight: 600;
     padding: 0px 5px;
     margin-top: -10px;
@@ -160,6 +186,9 @@ export const CardsWrapper = styled.div`
     background: transparent;
   }
   @media (min-width: 1000px) {
+    .corner-top{
+      margin-top: -100px;
+    }
     .card {
       /* height: 50px;
       width: 350px; */

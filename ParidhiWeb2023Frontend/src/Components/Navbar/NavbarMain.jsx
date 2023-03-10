@@ -8,7 +8,7 @@ import MenuRoundedIcon from "@mui/icons-material/MenuRounded";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import NavElem from "./Scripts/NavElements";
 import back from "./assets/back.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const SideModalVariant = {
   hidden: { opacity: 0, x: -100 },
   transition: { type: "spring", stiffness: 50 },
@@ -28,6 +28,7 @@ const item = {
   },
 };
 const NavbarMain = () => {
+  const Navigate=useNavigate();
   const [menuopen, setMenuopen] = useState(false);
   return (
     <>
@@ -39,7 +40,9 @@ const NavbarMain = () => {
             animate="show"
           >
             <div className="nav-items">
-              <img src={megalogo} alt="" style={{ width: "60px" }} />
+              <img src={megalogo} alt="" style={{ width: "60px",cursor:"pointer" }} onClick={()=>{
+                Navigate('/');
+              }}/>
               <CloseRoundedIcon
                 className="toggle"
                 onClick={() => {
@@ -74,7 +77,9 @@ const NavbarMain = () => {
               animate="show"
               className="nav_div"
             >
-              <img src={megalogo} alt="" style={{ width: "70px" }} />
+              <img src={megalogo} alt="" style={{ width: "70px",cursor:"pointer"  }} onClick={()=>{
+                Navigate('/');
+              }}/>
               {/* <div className="links"> */}
               <button className="btn1">Sign Up</button>
               <MenuRoundedIcon

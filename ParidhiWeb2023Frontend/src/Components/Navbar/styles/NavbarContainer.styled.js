@@ -4,6 +4,7 @@ const NavbarContainer = styled.nav`
   top: 0;
   width: 100vw;
   z-index: 3;
+  overflow: hidden;
   .nav_div {
     display: flex;
     align-items: center;
