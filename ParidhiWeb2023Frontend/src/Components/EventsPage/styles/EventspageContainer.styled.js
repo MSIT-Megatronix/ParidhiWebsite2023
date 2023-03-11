@@ -105,6 +105,8 @@ export const CardsWrapper = styled.div`
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
     /* rotate: 20deg; */
+    /* box-shadow: 0px 10px 10px #161616; */
+
   }
   .domImgDiv {
     width: 100%;
@@ -119,7 +121,7 @@ export const CardsWrapper = styled.div`
     transition: 0.4s;
   }
   .card:hover {
-    box-shadow: 0px 0px 10px #ffffff8b;
+    box-shadow: 0px 0px 15px #000;
     margin-top: -50px;
     /* border-radius: 0px 20px 0px 20px; */
   }
@@ -132,6 +134,9 @@ export const CardsWrapper = styled.div`
     align-items: center ;
     text-transform: uppercase;
     font-size: 12px;
+    outline: none;
+      box-shadow: 0px 10px 10px #000;
+
   }
   .arrow-event-btn{
     /* background: #fff; */
@@ -166,8 +171,6 @@ export const CardsWrapper = styled.div`
     background: #ffffffcd;
   }
   .heading {
-    
-
     padding: 10px 5px;
     font-weight: 800;
     color: #1b1b1b;
@@ -175,8 +178,6 @@ export const CardsWrapper = styled.div`
     text-transform: uppercase;
   }
   .domainDetails {
-    
-
     font-weight: 600;
     padding: 0px 5px;
     margin-top: -10px;
@@ -199,6 +200,7 @@ export const CardsWrapper = styled.div`
       /* width: 50vw; */
     }
     .up {
+      box-shadow: 0px 10px 10px #000000;
       position: relative;
       z-index: 2;
       margin-top: 0px;
@@ -208,8 +210,10 @@ export const CardsWrapper = styled.div`
       margin-top: -50%;
       z-index: 1;
       scale: 0.8;
+
     }
     .bt:hover {
+      box-shadow: 0px 0px 10px #000;
       animation: fronte 0.2s linear forwards;
       scale: 1;
       margin-top: -250px;
