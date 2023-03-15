@@ -5,6 +5,7 @@ export const EventspageContainer = styled.section`
   position: relative;
   overflow-y: auto;
   overflow-x: hidden;
+  background: #242424;
   /* padding: 0px 20px; */
   .hex-grid .grid {
     position: absolute;
@@ -18,9 +19,9 @@ export const EventspageContainer = styled.section`
   }
   .hex-grid .light {
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
     width: 30em;
     height: 30em;
     border-radius: 50%;
@@ -68,6 +69,13 @@ export const EventspageContainer = styled.section`
     width: 600px;
     height: 600px;
   }
+  @media (min-width: 650px) {
+    .hex-grid .light {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
   @media (min-width: 1000px) {
     height: 100vh;
     overflow: hidden;
@@ -88,7 +96,6 @@ export const EventspageContainer = styled.section`
 `;
 
 export const CardsWrapper = styled.div`
-
   .card {
     padding: 5px;
     border: 3px solid #fff;
@@ -106,7 +113,6 @@ export const CardsWrapper = styled.div`
     border: 1px solid rgba(255, 255, 255, 0.125);
     /* rotate: 20deg; */
     /* box-shadow: 0px 10px 10px #161616; */
-
   }
   .domImgDiv {
     width: 100%;
@@ -128,17 +134,16 @@ export const CardsWrapper = styled.div`
   /* .card:hover .domainImg {
     width: 240px;
   } */
-  .event-btn{
+  .event-btn {
     display: flex;
     justify-content: center;
-    align-items: center ;
+    align-items: center;
     text-transform: uppercase;
     font-size: 12px;
     outline: none;
-      box-shadow: 0px 10px 10px #000;
-
+    box-shadow: 0px 10px 10px #000;
   }
-  .arrow-event-btn{
+  .arrow-event-btn {
     /* background: #fff; */
     width: 20px;
   }
@@ -156,14 +161,10 @@ export const CardsWrapper = styled.div`
     justify-content: center;
   }
   .logo {
-    
-
     height: 50px;
     width: 50px;
   }
   .details {
-    
-
     height: 90px;
     width: 95%;
     margin-top: 20px;
@@ -187,7 +188,7 @@ export const CardsWrapper = styled.div`
     background: transparent;
   }
   @media (min-width: 1000px) {
-    .corner-top{
+    .corner-top {
       margin-top: -100px;
     }
     .card {
@@ -210,7 +211,6 @@ export const CardsWrapper = styled.div`
       margin-top: -50%;
       z-index: 1;
       scale: 0.8;
-
     }
     .bt:hover {
       box-shadow: 0px 0px 10px #000;

@@ -6,8 +6,12 @@ const HeroContainer = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 80px;
   .countdown {
     width: 80vw;
+  }
+  .paridhi{
+    margin-top: 30px;
   }
   .socials {
     /* position: absolute; */

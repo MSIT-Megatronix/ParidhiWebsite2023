@@ -7,6 +7,7 @@ const HomepageContainer = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background: #242424;
   .hex-grid .grid {
     position: absolute;
     top: 0;

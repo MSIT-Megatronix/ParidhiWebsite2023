@@ -26,7 +26,7 @@ function App() {
             </React.Suspense>
           }
         />
-        <Route
+        {/* <Route
           path="/events"
           element={
             <React.Suspense fallback={<PageLoader />}>
@@ -34,16 +34,16 @@ function App() {
             </React.Suspense>
             // <EventsMain/>
           }
-        />
-        <Route
+        /> */}
+        {/* <Route
             path="/team"
             element={
               <React.Suspense fallback={<PageLoader />}>
-                {/* <NavbarMain /> */}
-              {/* <LazyEvents/> */}
+                 <NavbarMain /> 
+               <LazyEvents/> 
               </React.Suspense>
             }
-          />
+          /> */}
       </Routes>
       {/* </BrowserRouter> */}
     </>
