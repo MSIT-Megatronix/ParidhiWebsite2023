@@ -9,7 +9,7 @@ const NewsTickerContainer = styled.section`
   /* height: 100px; */
   overflow: hidden;
   margin-top: -40px;
-  span {
+  .glowtext {
     text-shadow: 0px 0px 15px #00eaff;
   }
   span p {
@@ -40,13 +40,12 @@ const NewsTickerContainer = styled.section`
     font-size: 35px;
   }
   #paridhi {
+    font-family:"Camar";
     margin-top: 60px;
     font-size: 45px;
     margin-bottom: 30px;
     font-weight: 700;
-    /* -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate; */
+    text-shadow: none;
   }
   .marque {
     /* margin-top: 50px; */

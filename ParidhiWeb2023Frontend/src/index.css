@@ -13,7 +13,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+@font-face {
+  font-family: "Camar";
+  src: local("Camar"),
+    url("./font/Camar.otf") format("otf");
+}
+@font-face {
+  font-family: "Radwave";
+  src: local("Radwave"),
+    url("./font/RadwaveFont_Demo.otf") format("otf");
+}
 a {
   font-weight: 500;
   color: #646cff;

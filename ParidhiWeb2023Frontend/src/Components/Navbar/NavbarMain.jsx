@@ -40,7 +40,7 @@ const NavbarMain = () => {
             animate="show"
           >
             <div className="nav-items">
-              <img src={megalogo} alt="" style={{ width: "60px",cursor:"pointer" }} onClick={()=>{
+              <img src={megalogo} alt="" style={{ width: "100px",cursor:"pointer" }} onClick={()=>{
                 Navigate('/');
               }}/>
               {/* <CloseRoundedIcon
@@ -77,7 +77,7 @@ const NavbarMain = () => {
               animate="show"
               className="nav_div"
             >
-              <img src={megalogo} alt="" style={{ width: "70px",cursor:"pointer"  }} onClick={()=>{
+              <img src={megalogo} alt="" style={{ width: "100px",cursor:"pointer"  }} onClick={()=>{
                 Navigate('/');
               }}/>
               {/* <button className="btn1">Sign Up</button>
