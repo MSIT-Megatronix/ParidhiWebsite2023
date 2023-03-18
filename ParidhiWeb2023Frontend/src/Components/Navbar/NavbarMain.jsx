@@ -43,14 +43,14 @@ const NavbarMain = () => {
               <img src={megalogo} alt="" style={{ width: "60px",cursor:"pointer" }} onClick={()=>{
                 Navigate('/');
               }}/>
-              {/* <CloseRoundedIcon
+              <CloseRoundedIcon
                 className="toggle"
                 onClick={() => {
                   setMenuopen(false);
                 }}
-              /> */}
+              />
             </div>
-            {/* <ul className="nav_all">
+            <ul className="nav_all">
               {NavElem.map((data, index) => {
                 return (
                   <NavLink
@@ -65,7 +65,7 @@ const NavbarMain = () => {
                   </NavLink>
                 );
               })}
-            </ul> */}
+            </ul>
           </motion.div>
         </SideModalContainer>
       ) : (
@@ -80,7 +80,7 @@ const NavbarMain = () => {
               <img src={megalogo} alt="" style={{ width: "70px",cursor:"pointer"  }} onClick={()=>{
                 Navigate('/');
               }}/>
-              {/* <button className="btn1">Sign Up</button>
+              <button className="btn1">Sign Up</button>
               <MenuRoundedIcon
                 className="toggle"
                 onClick={() => {
@@ -106,7 +106,7 @@ const NavbarMain = () => {
               </ul>
               <motion.button variants={item} className="btn2">
                 Sign Up
-              </motion.button> */}
+              </motion.button>
             </motion.div>
           </NavbarContainer>
         </>

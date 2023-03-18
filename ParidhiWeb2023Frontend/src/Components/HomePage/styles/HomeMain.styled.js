@@ -8,28 +8,6 @@ const HomepageContainer = styled.div`
   position: relative;
   overflow: hidden;
   background: #242424;
-  .hex-grid .grid {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(${(props) => props.bg}) repeat;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background-size: 200px;
-  }
-  .hex-grid .light {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30em;
-    height: 30em;
-    border-radius: 50%;
-    filter: blur(20px);
-    background: linear-gradient(90deg, #00eaff 0%, #002b43 100%);
-    z-index: 0;
-  }
 
   @keyframes glowing {
     0% {

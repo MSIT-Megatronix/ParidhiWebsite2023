@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, SvgIcon } from "@mui/material";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
-import { CardsWrapper } from "../styles/EventspageContainer.styled";
+import { CardsWrapper } from "../StaticJS/styles/EventspageContainer.styled";
 // import codingImg from "../assets/CodingImg.png";
 import megalogo from "../../Navbar/assets/megalogowithstroke.png";
 import { motion } from "framer-motion";
@@ -82,24 +82,22 @@ const Cards = (props) => {
         <motion.div className="domImgDiv" variants={item}>
           <img src={props.image} alt="" className="domainImg" />
         </motion.div>
-        <motion.div className="corner-top" variants={item}>
+        {/* <motion.div className="corner-top" variants={item}>
           <img src={megalogo} alt="logo" className="logo" />
-        </motion.div>
+        </motion.div> */}
         <motion.div className="details" variants={item}>
-          <div className="heading">{props.domain}</div>
+          <div className="heading">{props.name}</div>
           <div className="domainDetails">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            non et,Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Ducimus, dolorum?
+            {props.details}
           </div>
           <motion.button
             // onClick={onButtonClick}
             className={"event-btn"}
-            // variants={Button}
-            // initial='hidden'
-            // animate='animate'
+            onClick={() => {
+              Navigate(props.name.toLowerCase().split("-")[0]);
+            }}
           >
-            Events
+            {props.button}
             <motion.div
               className="arrow-event-btn"
               animate={{ opacity: 0.4 }}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavbarMain from "../Navbar/NavbarMain";
 import gridImg from "../HomePage/assets/grid.svg";
-import { EventspageContainer } from "./styles/EventspageContainer.styled";
+import { EventspageContainer } from "./StaticJS/styles/EventspageContainer.styled";
 import Cards from "./components/Cards";
 import { motion } from "framer-motion";
 import { CardData } from "./StaticJS/CardData";
@@ -52,12 +52,15 @@ const EventsMain = () => {
             animate="show"
           >
             {CardData.map((data, index) => {
+              console.log(data.details);
               return (
                 <Cards
                   bt={data.class}
                   image={data.image}
-                  domain={data.name}
+                  name={data.name}
                   key={index}
+                  details={data.details}
+                  button="events"
                 />
               );
             })}
