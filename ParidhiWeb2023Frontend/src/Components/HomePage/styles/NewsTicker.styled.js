@@ -40,7 +40,7 @@ const NewsTickerContainer = styled.section`
     font-size: 35px;
   }
   #paridhi {
-    margin-top: 60px;
+    margin-top: 40px;
     font-size: 45px;
     margin-bottom: 30px;
     font-weight: 700;
@@ -66,10 +66,10 @@ const NewsTickerContainer = styled.section`
   }
   @keyframes backSlide {
     10% {
-      background-position: 0px 100px;
+      background-position: 0px 200px;
     }
     40% {
-      background-position: 100px 350px;
+      background-position: 200px 350px;
     }
     70% {
       background-position: 400px 550px;
