@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import NavbarMain from "../../Navbar/NavbarMain";
 import { CardData, EventsData } from "../StaticJS/CardData";
-import { EventspageContainer } from "../StaticJS/styles/EventspageContainer.styled";
+import { EventspageContainer } from "../styles/EventspageContainer.styled";
 import Cards from "./Cards";
 import gridImg from "../../HomePage/assets/grid.svg";
 import { motion } from "framer-motion";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavbarMain from "../Navbar/NavbarMain";
 import gridImg from "../HomePage/assets/grid.svg";
-import { EventspageContainer } from "./StaticJS/styles/EventspageContainer.styled";
+import { EventspageContainer } from "./styles/EventspageContainer.styled";
 import Cards from "./components/Cards";
 import { motion } from "framer-motion";
 import { CardData } from "./StaticJS/CardData";
@@ -36,7 +36,7 @@ const EventsMain = () => {
   return (
     <>
       <NavbarMain />
-      <EventspageContainer bg={gridImg} onMouseMove={moveLight}>
+      <EventspageContainer onMouseMove={moveLight}>
         <div className="hex-grid">
           <div className="light"></div>
           <div className="grid"></div>

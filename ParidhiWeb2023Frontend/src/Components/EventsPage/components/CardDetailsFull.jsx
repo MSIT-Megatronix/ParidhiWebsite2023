@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import NavbarMain from "../../Navbar/NavbarMain";
-import BiggerCardContainer from "../StaticJS/styles/CardBigger.styled";
+import BiggerCardContainer from "../styles/CardBigger.styled";
 import GamingMain from "../assets/GamingMain.jpeg";
 const CardDetailsFull = (props) => {
   const { event } = useParams();
@@ -25,6 +25,8 @@ const CardDetailsFull = (props) => {
           <img src={GamingMain} alt="" className="poster" />
 
           <div className="details">
+            <div className="event">{event}</div>
+            <hr />
             <div className="regFee">Registration Fee : RS.200</div>
             <hr />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
@@ -39,8 +41,8 @@ const CardDetailsFull = (props) => {
             veritatis eaque dicta velit veniam nesciunt, dignissimos, eligendi
             facere distinctio aut nisi? Error libero repellendus itaque nostrum
             dolor unde atque delectus totam ex veniam?
+            <button>Event Rules</button>
           </div>
-          <button>Event Rules</button>
           {/* </div> */}
         </div>
       </BiggerCardContainer>

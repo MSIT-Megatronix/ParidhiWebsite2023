@@ -23,7 +23,15 @@ const BiggerCardContainer = styled.section`
     /* border-radius: 12px; */
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
-  .regFee{
+  .event{
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    letter-spacing: 1.5pt;
+    text-shadow: 0px 0px 10px #00eaff;
+  }
+  .regFee,.event{
     font-family: 'K2D',sans-serif;
     font-weight: 700;
     font-size: 25px;
@@ -33,6 +41,7 @@ const BiggerCardContainer = styled.section`
     text-transform: uppercase;
     width: 100%;
     outline: none;
+    margin-top: 15px;
   }
   .poster {
     width: 100%;
@@ -51,6 +60,7 @@ const BiggerCardContainer = styled.section`
     .details{
         padding: 10px 10px;
     }
+    
   }
 `;
 export default BiggerCardContainer;

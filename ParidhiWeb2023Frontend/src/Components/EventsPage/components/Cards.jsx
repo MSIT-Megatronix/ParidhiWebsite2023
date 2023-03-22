@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, SvgIcon } from "@mui/material";
 import EastRoundedIcon from "@mui/icons-material/EastRounded";
-import { CardsWrapper } from "../StaticJS/styles/EventspageContainer.styled";
+import { CardsWrapper } from "../styles/EventspageContainer.styled";
 // import codingImg from "../assets/CodingImg.png";
 import megalogo from "../../Navbar/assets/megalogowithstroke.png";
 import { motion } from "framer-motion";

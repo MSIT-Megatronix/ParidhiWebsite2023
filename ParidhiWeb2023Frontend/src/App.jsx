@@ -2,24 +2,21 @@
 import React from "react";
 import PreLoader from "./Components/HomePage/components/PreLoader";
 import { PageLoader } from "./Components/HomePage/components/PreLoader";
-// import HomeMain from "./Components/HomePage/HomeMain";
 import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
-import NavbarMain from "./Components/Navbar/NavbarMain";
-import EventsMain from "./Components/EventsPage/EventsMain";
 import TeamMain from "./Components/TeamPage/TeamMain";
 import DomainEvents from "./Components/EventsPage/components/DomainEvents";
 import CardDetailsFull from "./Components/EventsPage/components/CardDetailsFull";
+import Workshop from "./Components/Workshop/Workshop";
 const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
 );
+const LazyTeams = React.lazy(() =>
+  import("./Components/TeamPage/TeamMain")
+);
 function App() {
-  // return <HomeMain />;
   return (
     <>
-      {/* <NavbarMain /> */}
-      {/* <BrowserRouter> */}
       <Routes>
         <Route
           path="/"
@@ -42,7 +39,23 @@ function App() {
           path="/team"
           element={
             <React.Suspense fallback={<PageLoader />}>
-              <TeamMain />
+              <LazyTeams />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/team"
+          element={
+            <React.Suspense fallback={<PageLoader />}>
+              <LazyTeams />
+            </React.Suspense>
+          }
+        />
+        <Route
+          path="/workshop"
+          element={
+            <React.Suspense fallback={<PageLoader />}>
+              <Workshop />
             </React.Suspense>
           }
         />
@@ -99,19 +112,11 @@ function App() {
           element={
             <React.Suspense fallback={<PageLoader />}>
               <CardDetailsFull/>
-            </React.Suspense>
+             </React.Suspense>
           }
         />
-        {/* <Route
-          path="/events/robotics/supernova"
-          element={
-            <React.Suspense fallback={<PageLoader />}>
-              <DomainEvents data="0" />
-            </React.Suspense>
-          }
-        /> */}
+        
       </Routes>
-      {/* </BrowserRouter> */}
     </>
   );
 }
