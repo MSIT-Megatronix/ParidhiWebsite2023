@@ -27,8 +27,6 @@ export const WorkshopCardContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.125);
     width: 300px;
-    height: 350px;
-    transition: height 0.5s;
     font-family: "K2D", sans-serif;
   }
   .poster {

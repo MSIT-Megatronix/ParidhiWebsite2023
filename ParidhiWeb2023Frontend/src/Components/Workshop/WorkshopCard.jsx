@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { WorkshopCardContainer } from "./Styles/WorkShopContainer.styled";
 import GamingMain from "./assets/GamingMain.jpeg";
+import { motion } from "framer-motion";
+
 const WorkshopCard = () => {
   const lorem =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem repellat nemo, dicta deleniti vel reprehenderit accusantium! Nam nulla laboriosam corporis quaerat necessitatibus, voluptatem fuga fugit nesciunt dolore expedita qui suscipit obcaecati inventore nihil ab odio laborum earum consequuntur. Dolor rerum ducimus totam veritatis. Maxime corrupti voluptas minus, inventore quibusdam soluta.";
@@ -10,29 +12,70 @@ const WorkshopCard = () => {
   const seeLess = (
     <span style={{ fontWeight: "700", cursor: "pointer" }}>...See Less</span>
   );
+
   const [Open, setOpen] = useState(false);
-  const [OpenDetails, setOpenDetails] = useState(false);
   return (
     <WorkshopCardContainer>
-      <div className="card" style={{ height: Open ? "620px" : "380px" }}>
-        <img src={GamingMain} alt="" className="poster" />
-        <hr />
-        <div className="heading">Coding Workshop</div>
-        <hr />
-        <div
-          className="details"
-          onClick={() => {
-            setOpen(!Open);
-            // setTimeout(() => {
-            //   setOpenDetails(!OpenDetails);
-            // }, 250);
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.8, staggerChildren: 0.5, delay: 0.2 },
+        }}
+      >
+        <motion.div
+          layout
+          transition={{
+            layout: { duration: 0.8, type: "spring", bounce: 2, stiffness: 50 },
           }}
+          className="card"
         >
-          {!Open ? lorem.slice(0, 60) : lorem}
-          {!Open ? seeMore : seeLess}
-        </div>
-        <button>Register</button>
-      </div>
+          <motion.img
+            layout="position"
+            src={GamingMain}
+            alt=""
+            className="poster"
+          />
+          <motion.hr layout="position" />
+
+          <motion.div layout="position" className="heading">
+            Coding Workshop
+          </motion.div>
+          <motion.hr layout="position" />
+
+          {!Open ? (
+            <motion.div
+              className="details"
+              onClick={() => {
+                setOpen(!Open);
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              // layout
+            >
+              {lorem.slice(0, 60)}
+              {seeMore}
+            </motion.div>
+          ) : (
+            <motion.div
+              className="details"
+              onClick={() => {
+                setOpen(!Open);
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 3 }}
+              // layout
+            >
+              {lorem}
+              {seeLess}
+            </motion.div>
+          )}
+          <button>Register</button>
+        </motion.div>
+      </motion.div>
     </WorkshopCardContainer>
   );
 };
