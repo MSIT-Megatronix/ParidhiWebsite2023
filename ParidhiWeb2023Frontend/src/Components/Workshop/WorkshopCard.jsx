@@ -3,7 +3,7 @@ import { WorkshopCardContainer } from "./Styles/WorkShopContainer.styled";
 import GamingMain from "./assets/GamingMain.jpeg";
 import { motion } from "framer-motion";
 
-const WorkshopCard = () => {
+const WorkshopCard = (props) => {
   const lorem =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem repellat nemo, dicta deleniti vel reprehenderit accusantium! Nam nulla laboriosam corporis quaerat necessitatibus, voluptatem fuga fugit nesciunt dolore expedita qui suscipit obcaecati inventore nihil ab odio laborum earum consequuntur. Dolor rerum ducimus totam veritatis. Maxime corrupti voluptas minus, inventore quibusdam soluta.";
   const seeMore = (
@@ -40,7 +40,7 @@ const WorkshopCard = () => {
           <motion.hr layout="position" />
 
           <motion.div layout="position" className="heading">
-            Coding Workshop
+            {props.heading || "Coding workshop"}
           </motion.div>
           <motion.hr layout="position" />
 
@@ -55,7 +55,7 @@ const WorkshopCard = () => {
               transition={{ duration: 1 }}
               // layout
             >
-              {lorem.slice(0, 60)}
+              {props.data.slice(0, props.length)||lorem.slice(0,70) }
               {seeMore}
             </motion.div>
           ) : (
@@ -69,11 +69,18 @@ const WorkshopCard = () => {
               transition={{ duration: 3 }}
               // layout
             >
-              {lorem}
+              {props.data || lorem}
               {seeLess}
             </motion.div>
           )}
-          <button>Register</button>
+          <button
+            onClick={() => {
+              window.open(props.registration_link, "_blank");
+            }}
+
+          >
+            Register
+          </button>
         </motion.div>
       </motion.div>
     </WorkshopCardContainer>

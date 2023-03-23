@@ -7,6 +7,7 @@ import TeamMain from "./Components/TeamPage/TeamMain";
 import DomainEvents from "./Components/EventsPage/components/DomainEvents";
 import CardDetailsFull from "./Components/EventsPage/components/CardDetailsFull";
 import Workshop from "./Components/Workshop/Workshop";
+import PreParidhiEventsMain from "./Components/PreParidhiEvents/PreParidhiEventsMain";
 const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
@@ -44,10 +45,10 @@ function App() {
           }
         />
         <Route
-          path="/team"
+          path="/pre_paridhi_events"
           element={
             <React.Suspense fallback={<PageLoader />}>
-              <LazyTeams />
+              <PreParidhiEventsMain />
             </React.Suspense>
           }
         />

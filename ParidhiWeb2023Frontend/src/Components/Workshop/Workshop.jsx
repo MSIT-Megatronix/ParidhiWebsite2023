@@ -30,9 +30,9 @@ const Workshop = () => {
           <div className="grid"></div>
         </div>
         <div className="text">
-          <WorkshopCard/>
-          <WorkshopCard/>
-          <WorkshopCard/>
+          <WorkshopCard length={70} />
+          <WorkshopCard length={70} />
+          <WorkshopCard length={70} />
         </div>
       </WorkshopContainer>
     </>

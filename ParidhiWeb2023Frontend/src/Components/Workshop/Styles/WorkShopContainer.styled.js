@@ -18,7 +18,7 @@ const WorkshopContainer = styled.section`
   }
 `;
 export const WorkshopCardContainer = styled.div`
-  z-index: 3;
+  z-index: 2;
   margin: 10px 20px;
   .card {
     padding: 10px;
