@@ -11,7 +11,7 @@ const PreParidhiEventsMain = () => {
         <div className="hex-grid">
           <div className="light"></div>
           <div className="grid"></div>
-        </div>
+        </div>`
         <div className="text">
           <WorkshopCard
             data={

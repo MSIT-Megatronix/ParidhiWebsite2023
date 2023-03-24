@@ -55,8 +55,10 @@ const WorkshopCard = (props) => {
               transition={{ duration: 1 }}
               // layout
             >
-              {props.data.slice(0, props.length)||lorem.slice(0,70) }
-              {seeMore}
+              {props.data.slice(0, props.length) || lorem.slice(0, 70)}
+              {props.data.length() <= 70 || props.data.length() <= props.length
+                ? seeMore
+                : ""}
             </motion.div>
           ) : (
             <motion.div
@@ -70,14 +72,15 @@ const WorkshopCard = (props) => {
               // layout
             >
               {props.data || lorem}
-              {seeLess}
+              {props.data.length() <= 70 || props.data.length() <= props.length
+                ? seeLess
+                : ""}
             </motion.div>
           )}
           <button
             onClick={() => {
               window.open(props.registration_link, "_blank");
             }}
-
           >
             Register
           </button>

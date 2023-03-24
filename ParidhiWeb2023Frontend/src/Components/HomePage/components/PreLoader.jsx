@@ -34,9 +34,11 @@ const PageLoader=()=>{
           width: "100vw",
           height: "100vh",
           display: "flex",
+          position:"relative",
+          zIndex:2,
           justifyContent: "center",
           alignItems:"center",
-          background: "#000",
+          background: "transparent",
         }}
       >
         <img src={loading} alt="" />

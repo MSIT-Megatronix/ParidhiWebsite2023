@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavbarMain from "../Navbar/NavbarMain";
 import gridImg from "../HomePage/assets/grid.svg";
 import { EventspageContainer } from "./styles/EventspageContainer.styled";
 import Cards from "./components/Cards";
 import { motion } from "framer-motion";
 import { CardData } from "./StaticJS/CardData";
+import axios from "axios";
+import { PageLoader } from "../HomePage/components/PreLoader";
+
 const EventsMain = () => {
+  const [backdata, setData] = useState([]);
+  const [map, setMap] = useState(false);
   const moveLight = (e) => {
     const light = document.querySelector(".light");
     const grid = document.querySelector(".grid");
@@ -32,7 +37,18 @@ const EventsMain = () => {
       y: 0,
     },
   };
-  const [open, setOpen] = useState(false);
+
+  const getData = async () => {
+    const response = await axios.get("http://localhost:6969/events");
+    setData(response.data);
+    console.log(response.data);
+    setMap(true);
+    // console.log(response);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <>
       <NavbarMain />
@@ -41,32 +57,35 @@ const EventsMain = () => {
           <div className="light"></div>
           <div className="grid"></div>
         </div>
-        <div className="text">
-          <motion.div
-            className="events"
-            onClick={() => {
-              setOpen(true);
-            }}
-            variants={CardVariant}
-            initial="hidden"
-            animate="show"
-          >
-            {CardData.map((data, index) => {
-              console.log(data.details);
-              return (
-                <Cards
-                  bt={data.class}
-                  image={data.image}
-                  name={data.name}
-                  key={index}
-                  details={data.details}
-                  button="events"
-                />
-              );
-            })}
-          </motion.div>
-          {open && <div></div>}
-        </div>
+        {map ? (
+          <div className="text">
+            <motion.div
+              className="events"
+              onClick={() => {
+                setOpen(true);
+              }}
+              variants={CardVariant}
+              initial="hidden"
+              animate="show"
+            >
+              {CardData.map((data, index) => {
+                // console.log(data.details);
+                return (
+                  <Cards
+                    bt={data.class}
+                    image={data.image}
+                    name={data.name}
+                    key={index}
+                    details={data.details}
+                    button="events"
+                  />
+                );
+              })}
+            </motion.div>
+          </div>
+        ) : (
+          <PageLoader />
+        )}
       </EventspageContainer>
     </>
   );
