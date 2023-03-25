@@ -58,9 +58,10 @@ const MemberCard = () => {
   return (
     <>
       <CardContainer>
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 6, 7, 8, 9, 10].map(() => {
+        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 6, 7, 8, 9, 10].map((data) => {
           return (
             <motion.div
+              key={data}
               className="teamcard"
               variants={container}
               initial="hidden"

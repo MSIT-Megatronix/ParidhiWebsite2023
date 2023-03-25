@@ -1,8 +1,8 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 6969;
-const cors = require("cors");
 
+const cors = require("cors");
 app.use(cors());
 
 const { createConnection } = require("mysql");
@@ -24,7 +24,7 @@ app.get("/events", async (req, res) => {
   await connection.query(
     "select * from eventlist left join Domains on eventlist.DomainID = Domains.DomainID ",
     (err, result, field) => {
-      if (err) throw err;
+      if (err) return console.log(err);
       res.json(result);
     }
   );
