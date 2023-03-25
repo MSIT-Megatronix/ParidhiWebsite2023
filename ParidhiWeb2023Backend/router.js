@@ -1,17 +1,15 @@
 const { Router } = require("express");
-const db = require("./database");
-var getDataQuery = `select * from 
-eventlist left join Domains on eventlist.DomainID = Domains.DomainID 
-union
-select * from
-eventlist right join Domains on eventlist.DomainID = Domains.DomainID`;
-
+const connection = require("./database");
 const router = Router();
 
 router.get("/", async (req, res) => {
-  const results = await db.query(getDataQuery);
-  console.log(results);
-  res.json({results})
+  await connection.query(
+    "select * from eventlist left join Domains on eventlist.DomainID = Domains.DomainID ",
+    (err, result, field) => {
+      if (err) return console.log(err);
+      res.json(result);
+    }
+  );
 });
 
-
+module.exports = router;

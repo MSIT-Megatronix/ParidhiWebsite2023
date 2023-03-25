@@ -9,7 +9,7 @@ import axios from "axios";
 import { PageLoader } from "../HomePage/components/PreLoader";
 
 const EventsMain = () => {
-  const [backdata, setData] = useState([]);
+  const [eventData, setEventData] = useState([]);
   const [map, setMap] = useState(false);
   const moveLight = (e) => {
     const light = document.querySelector(".light");
@@ -40,7 +40,7 @@ const EventsMain = () => {
 
   const getData = async () => {
     const response = await axios.get("http://localhost:6969/events");
-    setData(response.data);
+    setEventData(response.data);
     console.log(response.data);
     setMap(true);
     // console.log(response);
@@ -61,20 +61,17 @@ const EventsMain = () => {
           <div className="text">
             <motion.div
               className="events"
-              onClick={() => {
-                setOpen(true);
-              }}
               variants={CardVariant}
               initial="hidden"
               animate="show"
             >
-              {CardData.map((data, index) => {
+              {eventData.map((data, index) => {
                 // console.log(data.details);
                 return (
                   <Cards
-                    bt={data.class}
-                    image={data.image}
-                    name={data.name}
+                    // bt={data.class}
+                    image={data}
+                    name={data.DomainName}
                     key={index}
                     details={data.details}
                     button="events"

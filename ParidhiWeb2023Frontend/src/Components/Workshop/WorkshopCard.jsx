@@ -56,7 +56,7 @@ const WorkshopCard = (props) => {
               // layout
             >
               {props.data.slice(0, props.length) || lorem.slice(0, 70)}
-              {props.data.length() <= 70 || props.data.length() <= props.length
+              {props.data.length <= 70 || props.data.length() <= props.length
                 ? seeMore
                 : ""}
             </motion.div>

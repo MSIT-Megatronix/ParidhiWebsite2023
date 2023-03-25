@@ -22,7 +22,7 @@ export const EventspageContainer = styled.section`
     }
   }
   .text {
-    width: 100%;
+    /* width: 100%; */
     padding: 40px 0px 0px 0px;
     position: relative;
     /* display: flex;
@@ -40,6 +40,7 @@ export const EventspageContainer = styled.section`
   }
   .events {
     /* padding: 30px; */
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +59,12 @@ export const EventspageContainer = styled.section`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+  }
+  @media (min-width: 1300px) {
+    .events{
+      margin-left: 150px;
+      margin-right: 150px;
     }
   }
   /* @media (min-width: 1000px) {
