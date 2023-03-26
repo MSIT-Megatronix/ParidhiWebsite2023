@@ -141,11 +141,6 @@ const Cards = (props) => {
                 repeatType: "loop",
                 repeat: Infinity,
               }}
-              // initial={{ opacity: 0 }}
-              // animate={{
-              //   opacity: 1,
-              //   transition:{ repeat: Infinity, duration: 0.5, repeatDelay: 3,repeatType:"loop" }
-              // }}
             >
               <KeyboardArrowRightRoundedIcon />
             </motion.div>
@@ -160,11 +155,7 @@ const Cards = (props) => {
                 repeatType: "loop",
                 repeat: Infinity,
               }}
-              // initial={{ opacity: 0 }}
-              // animate={{
-              //   opacity: 1,
-              //   transition:{ repeat: Infinity, duration: 0.5, repeatDelay:3.5,repeatType:"loop" }
-              // }}
+              
             >
               <KeyboardArrowRightRoundedIcon />
             </motion.div>

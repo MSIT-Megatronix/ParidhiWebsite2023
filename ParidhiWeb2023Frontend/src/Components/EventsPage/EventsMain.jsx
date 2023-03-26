@@ -40,8 +40,8 @@ const EventsMain = () => {
 
   const getData = async () => {
     const response = await axios.get("http://localhost:6969/events");
-    setEventData(response.data);
-    console.log(response.data);
+    setEventData(response.data.allevents);
+    console.log(response.data.allevents);
     setMap(true);
     // console.log(response);
   };
@@ -70,8 +70,8 @@ const EventsMain = () => {
                 return (
                   <Cards
                     // bt={data.class}
-                    image={data}
-                    name={data.DomainName}
+                    image={""}
+                    name={data.domain}
                     key={index}
                     details={data.details}
                     button="events"

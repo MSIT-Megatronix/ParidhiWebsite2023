@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { useParams } from "react-router-dom";
 import NavbarMain from "../../Navbar/NavbarMain";
 import BiggerCardContainer from "../styles/CardBigger.styled";
 import GamingMain from "../assets/GamingMain.jpeg";
+import { PageLoader } from "../../HomePage/components/PreLoader";
 const CardDetailsFull = (props) => {
-  const { event } = useParams();
+  const { domain, event } = useParams();
   const moveLight = (e) => {
     const light = document.querySelector(".light");
     const grid = document.querySelector(".grid");
@@ -12,6 +14,61 @@ const CardDetailsFull = (props) => {
     light.style.left = `${e.clientX}px`;
     light.style.top = `${e.clientY + scrollY}px`;
   };
+  const [eventData, setEventData] = useState([]);
+  const [eachEventdetails, setEachEventDetails] = useState({});
+  const [dataAvailable, setDataAvailable] = useState(false);
+  const getData = async () => {
+    const response = await axios.get("http://localhost:6969/events");
+    switch (domain) {
+      case "coding":
+        console.log(domain,event);
+        console.log(response.data.allevents[0].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event == element.EventName.toLowerCase()) {
+            console.log(element.EventName);
+            setEachEventDetails(element);
+            console.log(element);
+          }
+        });
+      case "electrical":
+        setEventData(response.data.allevents[1].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event === element.EventName) setEachEventDetails(element);
+        });
+        break;
+      case "gaming":
+        setEventData(response.data.allevents[2].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event === element.EventName) setEachEventDetails(element);
+        });
+        break;
+      case "robotics":
+        setEventData(response.data.allevents[3].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event === element.EventName) setEachEventDetails(element);
+        });
+        break;
+      case "general":
+        setEventData(response.data.allevents[4].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event === element.EventName) setEachEventDetails(element);
+        });
+        break;
+      case "civil":
+        setEventData(response.data.allevents[5].domainevents);
+        response.data.allevents[0].domainevents.forEach((element) => {
+          if (event === element.EventName) setEachEventDetails(element);
+        });
+        break;
+      default:
+        console.log('no match');
+        break;
+    }
+    setDataAvailable(true);
+  };
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <NavbarMain />
@@ -20,31 +77,29 @@ const CardDetailsFull = (props) => {
           <div className="light"></div>
           <div className="grid"></div>
         </div>
-        <div className="text">
-          {/* <div className="eventSection"> */}
-          <img src={GamingMain} alt="" className="poster" />
+        {dataAvailable ? (
+          <div className="text">
+            {/* <div className="eventSection"> */}
+            <img
+              src={`https://drive.google.com/uc?export=view&id=${
+                eachEventdetails.PosterLink.split("/")[5]
+              }`}
+              alt=""
+              className="poster"
+            />
 
-          <div className="details">
-            <div className="event">{event}</div>
-            <hr />
-            <div className="regFee">Registration Fee : RS.200</div>
-            <hr />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            harum eius ipsum rerum alias saepe dolore dignissimos natus, aut
-            facilis laboriosam nihil quibusdam rem sit corrupti. Quaerat
-            nesciunt non esse facere atque natus, dolor doloremque nihil
-            praesentium, mollitia quisquam rem perspiciatis unde accusamus animi
-            deserunt? Consequuntur similique sequi dolorum, iste fugiat
-            doloribus quaerat nam at unde voluptates dignissimos, voluptatum
-            tempore odit. Beatae optio consectetur sapiente dolor reprehenderit
-            labore doloremque rerum provident amet nemo sint recusandae dolore,
-            veritatis eaque dicta velit veniam nesciunt, dignissimos, eligendi
-            facere distinctio aut nisi? Error libero repellendus itaque nostrum
-            dolor unde atque delectus totam ex veniam?
-            <button>Event Rules</button>
+            <div className="details">
+              <div className="event">{event}</div>
+              <hr />
+              <div className="regFee">Registration Fee: {eachEventdetails.RegCost}</div>
+              <hr />
+              {eachEventdetails.EventDesc}
+              <button>Event Rules</button>
+            </div>
           </div>
-          {/* </div> */}
-        </div>
+        ) : (
+          <PageLoader />
+        )}
       </BiggerCardContainer>
     </>
   );
