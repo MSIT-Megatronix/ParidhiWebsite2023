@@ -9,6 +9,7 @@ import CardDetailsFull from "./Components/EventsPage/components/CardDetailsFull"
 import Workshop from "./Components/Workshop/Workshop";
 import PreParidhiEventsMain from "./Components/PreParidhiEvents/PreParidhiEventsMain";
 import NavbarMain from "./Components/Navbar/NavbarMain";
+import PdfViewer from "./Components/EventsPage/components/PdfViewer";
 const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
@@ -61,6 +62,8 @@ function App() {
         />
         <Route path="/events/:domain" element={<DomainEvents />} />
         <Route path="/events/:domain/:event" element={<CardDetailsFull />} />
+        <Route path="/events/:domain/:event/viewpdf" element={<PdfViewer/>}></Route>
+
       </Routes>
     </>
   );

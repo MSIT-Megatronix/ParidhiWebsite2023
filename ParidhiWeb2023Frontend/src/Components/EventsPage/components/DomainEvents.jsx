@@ -88,7 +88,7 @@ const DomainEvents = () => {
                 return (
                   <Cards
                     image={`https://drive.google.com/uc?export=view&id=${
-                      data.PosterLink.split("/")[5]
+                      data.EventPosterLink.split("/")[5]
                     }`}
                     name={data.EventName}
                     button={"view details"}
