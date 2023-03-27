@@ -89,9 +89,9 @@ const CardDetailsFull = (props) => {
           <div className="text">
             {/* <div className="eventSection"> */}
             <img
-              // src={`https://drive.google.com/uc?export=view&id=${
-              //   eachEventdetails.EventPosterLink.split("/")[5]
-              // }`}
+              src={`https://drive.google.com/uc?export=view&id=${
+                eachEventdetails.EventPosterLink.split("/")[5]
+              }`}
               alt=""
               className="poster"
             />
@@ -100,14 +100,14 @@ const CardDetailsFull = (props) => {
               <div className="event">{event}</div>
               <hr />
               <div className="regFee">
-                {/* Registration Fee:{eachEventdetails.RegCost} */}
+                Registration Fee:{eachEventdetails.RegCost}
               </div>
               <hr />
-              {/* {eachEventdetails.EventDesc} */}
+              {eachEventdetails.EventDesc}
               <button Navigate="/viewpdf">Event Rules</button>
-              <Routes>
+              {/* <Routes>
                 <Route path="/viewpdf" component={<PdfViewer/>}></Route>
-              </Routes>
+              </Routes> */}
             </div>
           </div>
         ) : (

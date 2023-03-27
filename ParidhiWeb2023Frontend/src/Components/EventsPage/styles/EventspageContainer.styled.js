@@ -37,6 +37,7 @@ export const EventspageContainer = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    min-height:450px;
   }
   .events {
     /* padding: 30px; */
