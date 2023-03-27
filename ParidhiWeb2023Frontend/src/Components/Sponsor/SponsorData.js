@@ -1,0 +1,10 @@
+import a from "./assets/a.png";
+import b from "./assets/b.png";
+import c from "./assets/c.png";
+import d from "./assets/d.png";
+import e from "./assets/e.jpeg";
+import f from "./assets/f.png";
+import g from "./assets/g.png";
+import h from "./assets/h.png";
+import i from "./assets/i.png";
+export const sponsorss = [a, b, c, d, e, f, g, h, i];

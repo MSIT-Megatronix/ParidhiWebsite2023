@@ -60,6 +60,9 @@ body::-webkit-scrollbar{
 body::-webkit-scrollbar-thumb{
 background: #ffffff74;
 }
+.text::-webkit-scrollbar{
+  width:0px
+}
 h1 {
   font-size: 3.2em;
   line-height: 1.1;

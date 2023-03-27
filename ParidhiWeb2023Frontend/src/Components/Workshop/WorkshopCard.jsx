@@ -14,6 +14,7 @@ const WorkshopCard = (props) => {
   );
 
   const [Open, setOpen] = useState(false);
+  const [WorkShopdata,setWorkShopData]=useState(props.data.slice(0,props.len))
   return (
     <WorkshopCardContainer>
       <motion.div
@@ -40,7 +41,7 @@ const WorkshopCard = (props) => {
           <motion.hr layout="position" />
 
           <motion.div layout="position" className="heading">
-            {props.heading || "Coding workshop"}
+            {props.name || "Coding workshop"}
           </motion.div>
           <motion.hr layout="position" />
 
@@ -55,10 +56,9 @@ const WorkshopCard = (props) => {
               transition={{ duration: 1 }}
               // layout
             >
-              {props.data.slice(0, props.len) || lorem.slice(0, 70)}
-              {props.data.length <= 70 || props.data.length <= props.len
-                ? seeMore
-                : ""}
+              {/* {props.data.slice(0, props.len) || lorem.slice(0, 70)} */}
+              {WorkShopdata}
+              {!Open?seeMore:""}
             </motion.div>
           ) : (
             <motion.div
@@ -72,12 +72,12 @@ const WorkshopCard = (props) => {
               // layout
             >
               {props.data || lorem}
-              {props.data.length() <= 70 || props.data.length() <= props.length
-                ? seeLess
-                : ""}
+
+              {Open?seeLess:""}
             </motion.div>
           )}
           <button
+            disabled={props.disable}
             onClick={() => {
               window.open(props.registration_link, "_blank");
             }}

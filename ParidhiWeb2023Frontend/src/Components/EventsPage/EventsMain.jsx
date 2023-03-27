@@ -70,10 +70,11 @@ const EventsMain = () => {
                 return (
                   <Cards
                     // bt={data.class}
-                    image={""}
+                    image={data.domainevents[0].DomainPosterLink}
+                    details={data.domainevents[0].DomainDesc}
                     name={data.domain}
                     key={index}
-                    details={data.details}
+                    // details={data.details}
                     button="events"
                   />
                 );

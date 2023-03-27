@@ -10,6 +10,7 @@ import Workshop from "./Components/Workshop/Workshop";
 import PreParidhiEventsMain from "./Components/PreParidhiEvents/PreParidhiEventsMain";
 import NavbarMain from "./Components/Navbar/NavbarMain";
 import PdfViewer from "./Components/EventsPage/components/PdfViewer";
+import Sponsor from "./Components/Sponsor/Sponsor";
 const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
@@ -36,14 +37,14 @@ function App() {
             // <EventsMain/>
           }
         />
-        <Route
+        {/* <Route
           path="/team"
           element={
             <React.Suspense fallback={<PageLoader />}>
               <LazyTeams />
             </React.Suspense>
           }
-        />
+        /> */}
         <Route
           path="/pre_paridhi_events"
           element={
@@ -60,10 +61,20 @@ function App() {
             </React.Suspense>
           }
         />
+        <Route
+          path="/sponsors"
+          element={
+            <React.Suspense fallback={<PageLoader />}>
+              <Sponsor />
+            </React.Suspense>
+          }
+        />
         <Route path="/events/:domain" element={<DomainEvents />} />
         <Route path="/events/:domain/:event" element={<CardDetailsFull />} />
-        <Route path="/events/:domain/:event/viewpdf" element={<PdfViewer/>}></Route>
-
+        <Route
+          path="/events/:domain/:event/viewpdf"
+          element={<PdfViewer />}
+        ></Route>
       </Routes>
     </>
   );

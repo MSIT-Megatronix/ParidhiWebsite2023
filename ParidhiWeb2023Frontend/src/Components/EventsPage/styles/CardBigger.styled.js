@@ -23,6 +23,13 @@ const BiggerCardContainer = styled.section`
     /* border-radius: 12px; */
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
+  .team-size{
+    font-size: 1.2rem;
+    font-family: 'K2D',sans-serif;
+    text-transform:capitalize;
+    margin-top: -10px;
+    font-weight: 600;
+  }
   .event{
     text-transform: uppercase;
     text-align: center;

@@ -88,7 +88,7 @@ const Cards = (props) => {
         <motion.div className="details" variants={item}>
           <div className="heading">{props.name}</div>
           <div className="domainDetails">
-            {props.details}
+            {props.details.slice(0,120)+"..."}
           </div>
           <motion.button
             // onClick={onButtonClick}

@@ -7,7 +7,7 @@ import GamingMain from "../assets/GamingMain.jpeg";
 import { PageLoader } from "../../HomePage/components/PreLoader";
 import PdfViewer from "./PdfViewer";
 const CardDetailsFull = (props) => {
-  const Navigate = useNavigate();
+  // const navigate = useNavigate();
   const { domain, event } = useParams();
   const moveLight = (e) => {
     const light = document.querySelector(".light");
@@ -32,8 +32,8 @@ const CardDetailsFull = (props) => {
           }
         });
       case "electrical":
-        setEventData(response.data.allevents[1].domainevents);
-        response.data.allevents[1].domainevents.forEach((element) => {
+        setEventData(response.data.allevents[3].domainevents);
+        response.data.allevents[3].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase()) {
             setEachEventDetails(element);
             console.log(element);
@@ -48,15 +48,15 @@ const CardDetailsFull = (props) => {
         });
         break;
       case "robotics":
-        setEventData(response.data.allevents[3].domainevents);
-        response.data.allevents[3].domainevents.forEach((element) => {
+        setEventData(response.data.allevents[1].domainevents);
+        response.data.allevents[1].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
         break;
       case "general":
         setEventData(response.data.allevents[4].domainevents);
-        response.data.allevents[44].domainevents.forEach((element) => {
+        response.data.allevents[4].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
@@ -89,9 +89,7 @@ const CardDetailsFull = (props) => {
           <div className="text">
             {/* <div className="eventSection"> */}
             <img
-              src={`https://drive.google.com/uc?export=view&id=${
-                eachEventdetails.EventPosterLink.split("/")[5]
-              }`}
+              src={eachEventdetails.EventPosterLink}
               alt=""
               className="poster"
             />
@@ -102,9 +100,14 @@ const CardDetailsFull = (props) => {
               <div className="regFee">
                 Registration Fee:{eachEventdetails.RegCost}
               </div>
+              <div className="team-size">
+                Team Size: {eachEventdetails.TeamSize}
+              </div>
               <hr />
               {eachEventdetails.EventDesc}
-              <button Navigate="/viewpdf">Event Rules</button>
+              <a href={`${eachEventdetails.PDFLink}`} target="_blank">
+                <button>Event Rules</button>
+              </a>
               {/* <Routes>
                 <Route path="/viewpdf" component={<PdfViewer/>}></Route>
               </Routes> */}

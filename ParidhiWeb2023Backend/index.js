@@ -31,19 +31,7 @@ var sqlRowstoJSON=(rows)=>{
   });
   return newObj;
 };
-// var sqltoJSON= async (query,domain)=>{
 
-//   await connection.query(query,(err, result, field) => {
-//       if (err) return console.log(err);
-//       var newObj = {
-//         "domain":`${domain}`,
-//         "domainevents":[]
-//       };
-//       newObj["domainevents"] = sqlRowstoJSON(result);
-//       return newObj;
-//     }
-//   );
-// };
 var getDataQuery = `select * from 
 eventlist left join Domains on eventlist.DomainID = Domains.DomainID 
 union
@@ -70,10 +58,10 @@ app.get("/events", async (req, res) => {
     // res.send(eventObjectJson);
   }
 );
-await connection.query(eleQuery,(err, result, field) => {
+await connection.query(roboQuery,(err, result, field) => {
   if (err) return console.log(err);
   var newObj = {
-    "domain":`Electrical`
+    "domain":`Robotics`
   };
   newObj["domainevents"] = sqlRowstoJSON(result);
   eventObjectJson["allevents"].push(newObj);
@@ -90,16 +78,17 @@ await connection.query(gamQuery,(err, result, field) => {
   // res.send(eventObjectJson);
 }
 );
-await connection.query(roboQuery,(err, result, field) => {
+await connection.query(eleQuery,(err, result, field) => {
   if (err) return console.log(err);
   var newObj = {
-    "domain":`Robotics`
+    "domain":`Electrical`
   };
   newObj["domainevents"] = sqlRowstoJSON(result);
   eventObjectJson["allevents"].push(newObj);
   // res.send(eventObjectJson);
 }
 );
+
 await connection.query(genQuery,(err, result, field) => {
   if (err) return console.log(err);
   var newObj = {

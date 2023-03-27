@@ -30,9 +30,15 @@ const Workshop = () => {
           <div className="grid"></div>
         </div>
         <div className="text">
-          <WorkshopCard len={70} data={"lorem"} />
-          <WorkshopCard len={70} data={"lorem"}/>
-          <WorkshopCard len={70} data={"lorem"}/>
+          <WorkshopCard
+          name={"Coding"}
+            len={70}
+            data={
+              "Still afraid of coding? Don't know where to start? Fear not, because Megatronix brings to you Workshops 2.0! For all those who want to learn but don't know how... for all those who feel they're hopelessly falling behind. Workshops 2.0 gives you an opportunity to go back to the basics, learn from the ground up! Extended sessions of Java, Python, Competitive Programming and much more to help you build your base in coding. So, get ready, because Workshops 2.0 starts soon!"
+            }
+          />
+          <WorkshopCard name={"Autonomous"} disable={true} len={60} data={"Ever felt so lazy that you just didn't wanna get up and wished there was a robot to do the work for you? Maybe you even had the idea about the robot but didn't have the resources or knowledge to make it? Megatronix is providing you with that knowledge and resources through our Autonomous Robotics Workshop. Its time to finally make those robots you always dreamed of."} />
+          {/* <WorkshopCard len={70} data={lorem} /> */}
         </div>
       </WorkshopContainer>
     </>

@@ -41,13 +41,13 @@ const DomainEvents = () => {
         setEventData(response.data.allevents[0].domainevents);
         break;
       case "electrical":
-        setEventData(response.data.allevents[1].domainevents);
+        setEventData(response.data.allevents[3].domainevents);
         break;
       case "gaming":
         setEventData(response.data.allevents[2].domainevents);
         break;
       case "robotics":
-        setEventData(response.data.allevents[3].domainevents);
+        setEventData(response.data.allevents[1].domainevents);
         break;
       case "general":
         setEventData(response.data.allevents[4].domainevents);
@@ -87,9 +87,7 @@ const DomainEvents = () => {
               {eventData.map((data, index) => {
                 return (
                   <Cards
-                    image={`https://drive.google.com/uc?export=view&id=${
-                      data.EventPosterLink.split("/")[5]
-                    }`}
+                    image={data.EventPosterLink}
                     name={data.EventName}
                     button={"view details"}
                     details={`${data.EventDesc}`.slice(0, 140) + "..."}

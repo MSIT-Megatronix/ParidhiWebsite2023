@@ -7,7 +7,7 @@ const WorkshopContainer = styled.section`
   overflow-y: hidden;
   overflow-x: hidden;
   .text {
-    margin-top: 80px;
+    margin-top: 70px;
     display: flex;
     justify-content: center;
     /* align-items: center; */
