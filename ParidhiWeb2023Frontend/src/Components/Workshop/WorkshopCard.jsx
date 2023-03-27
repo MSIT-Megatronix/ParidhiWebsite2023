@@ -34,7 +34,7 @@ const WorkshopCard = (props) => {
         >
           <motion.img
             layout="position"
-            src={GamingMain}
+            src={props.link}
             alt=""
             className="poster"
           />

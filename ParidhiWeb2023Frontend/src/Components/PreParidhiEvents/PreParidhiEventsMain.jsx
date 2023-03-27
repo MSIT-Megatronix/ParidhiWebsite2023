@@ -17,9 +17,9 @@ const PreParidhiEventsMain = () => {
             data={
               "As paridhi is right around the corner,Megatronix is here to give you a taste of the grand Fiesta! Participate in the pre paridhi coding contest and stand a chance to win exciting prizes!"
             }
+            link={'https://paridhinewbucket.s3.ap-south-1.amazonaws.com/mainDomain/CodingMain.jpeg'}
             len={130}
             heading="CP practice contest"
-            disable={true}
             registration_link="https://forms.gle/j1LXmS12TwPe72Gu6"
           />
         </div>

@@ -22,7 +22,8 @@ const Sponsor = () => {
         className="text"
         style={{
           position: "absolute",
-          zIndex: "3",
+          zIndex: "2",
+          minHeight:"100vh",
           marginTop: "70px",
           padding: "0px 20px",
           display: "flex",
