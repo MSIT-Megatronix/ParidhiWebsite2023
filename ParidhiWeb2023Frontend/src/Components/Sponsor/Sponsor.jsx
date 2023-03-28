@@ -27,7 +27,7 @@ const Sponsor = () => {
                   src={data.img}
                   alt=""
                   style={{ padding: "10px", marginTop: "-20px" }}
-                  width={200}
+                  width={180}
                 />
                 <div className="sporsor-details">{data.name}</div>
               </div>

@@ -37,6 +37,7 @@ export const SponsorWrapper = styled.section`
       text-transform: uppercase;
       padding-bottom: 10px;
       position: absolute;
+      padding-top: 5px;
       bottom: 0;
       font-size: 1.3rem;
       font-weight: 600;
