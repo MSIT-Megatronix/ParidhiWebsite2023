@@ -21,7 +21,7 @@ const CardDetailsFull = (props) => {
   const [dataAvailable, setDataAvailable] = useState(true);
   const getData = async () => {
     
-    const response = await axios.get("http://localhost:6969/events");
+    const response = await axios.get("https://3.110.174.37:8443/events");
     // console.log(response.data.allevents[1].domainevents[0].EventPosterLink);
     switch (domain) {
       case "coding":
