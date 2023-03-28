@@ -50,7 +50,7 @@ const MemberCard = (props) => {
           whileInView="visible"
         >
           <motion.div className="imgdiv" variants={item}>
-            <img src={props.image} width={200} height={200} alt="" />
+            <img src={props.image} width={200} height={200} alt="" loading="lazy"/>
           </motion.div>
           <motion.div className="name" variants={item}>
             {props.name}
