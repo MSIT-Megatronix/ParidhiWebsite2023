@@ -35,7 +35,7 @@ const DomainEvents = () => {
   const [domainName, setDomainName] = useState("");
   const [dataAvailable, setDataAvailable] = useState(false);
   const getData = async () => {
-    const response = await axios.get("http://localhost:6969/events");
+    const response = await axios.get("http://3.110.174.37:6969/events");
     switch (domain) {
       case "coding":
         setEventData(response.data.allevents[0].domainevents);

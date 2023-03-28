@@ -39,7 +39,7 @@ const EventsMain = () => {
   };
 
   const getData = async () => {
-    const response = await axios.get("http://localhost:6969/events");
+    const response = await axios.get("http://3.110.174.37:6969/events");
     setEventData(response.data.allevents);
     console.log(response.data.allevents);
     setMap(true);

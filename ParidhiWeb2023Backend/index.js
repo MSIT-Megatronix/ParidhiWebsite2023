@@ -1,12 +1,18 @@
 const express = require("express");
 // const connection = require("./database");
-
+const https = require("https");
 const app = express();
 const router = require("./router");
 
 const port = process.env.PORT || 6969;
-const cors = require("cors");
-app.use(cors());
+// const cors = require("cors");
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://msitparidhi.in');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 const { createConnection } = require("mysql");
 const connection = createConnection({
@@ -111,6 +117,14 @@ await connection.query(civQuery,(err, result, field) => {
 );
 });
 
-app.listen(port, () => {
-  console.log(`listening to port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`listening to port ${port}`);
+// });
+https
+  .createServer({
+    key: fs.readFileSync("key.pem"),
+    cert: fs.readFileSync("cert.pem"),
+  },app)
+  .listen(port, ()=>{
+    console.log('server is runing at port '+port)
+  });
