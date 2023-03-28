@@ -1,49 +1,40 @@
 import React from "react";
 import NavbarMain from "../Navbar/NavbarMain";
-import { sponsorss } from "./SponsorData";
-import a from "./assets/a.png";
-import b from "./assets/b.png";
-import c from "./assets/c.png";
-import d from "./assets/d.png";
-import e from "./assets/e.jpeg";
-import f from "./assets/f.png";
-import g from "./assets/g.png";
-import h from "./assets/h.png";
-import i from "./assets/i.png";
+import { sponsors } from "./SponsorData";
+
+import { SponsorWrapper } from "./SponsorWrapper";
 const Sponsor = () => {
+  const moveLight = (e) => {
+    const light = document.querySelector(".light");
+    const grid = document.querySelector(".grid");
+    const scrollY = document.documentElement.scrollTop;
+    light.style.left = `${e.clientX}px`;
+    light.style.top = `${e.clientY + scrollY}px`;
+  };
   return (
     <>
       <NavbarMain />
-      <div className="hex-grid">
-        <div className="light"></div>
-        <div className="grid"></div>
-      </div>
-      <div
-        className="text"
-        style={{
-          position: "absolute",
-          zIndex: "3",
-          marginTop: "70px",
-          padding: "0px 20px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexWrap: "wrap",
-          width: "100vw",
-          overflow: "hidden",
-        }}
-      >
-        {[a, b, c, d, e, f, i].map((data) => {
-          return (
-            <img
-              src={data}
-              alt=""
-              style={{ zIndex: 2 ,padding: "10px"}}
-              width={200}
-            />
-          );
-        })}
-      </div>
+      <SponsorWrapper onMouseMove={moveLight}>
+        <div className="hex-grid">
+          <div className="light"></div>
+          <div className="grid"></div>
+        </div>
+        <div className="text">
+          {sponsors.map((data,index) => {
+            return (
+              <div className="sponsor" key={data.names+data.index}>
+                <img
+                  src={data.img}
+                  alt=""
+                  style={{ padding: "10px", marginTop: "-20px" }}
+                  width={200}
+                />
+                <div className="sporsor-details">{data.name}</div>
+              </div>
+            );
+          })}
+        </div>
+      </SponsorWrapper>
     </>
   );
 };

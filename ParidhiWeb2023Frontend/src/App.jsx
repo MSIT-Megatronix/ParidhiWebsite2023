@@ -37,14 +37,14 @@ function App() {
             // <EventsMain/>
           }
         />
-        {/* <Route
+        <Route
           path="/team"
           element={
             <React.Suspense fallback={<PageLoader />}>
               <LazyTeams />
             </React.Suspense>
           }
-        /> */}
+        />
         <Route
           path="/pre_paridhi_events"
           element={

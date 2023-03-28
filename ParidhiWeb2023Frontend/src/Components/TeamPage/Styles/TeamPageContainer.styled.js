@@ -35,6 +35,14 @@ const TeamPageContainer = styled.section`
     position: relative;
     color: #fff;
     margin-top: 30px;
+    overflow-x: hidden;
+  }
+  .allcards{
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
   }
 `;
 
@@ -83,6 +91,10 @@ const CardContainer = styled.div`
     width: 130px;
     height: 130px;
     border: 1.2px solid #ffffffac;
+    object-fit: contain;
+    object-fit: cover;
+    scale: 1.1;
+    background: #fff;
     /* box-shadow: 0px 0px 20px #05eaff5d; */
   }
   .name,

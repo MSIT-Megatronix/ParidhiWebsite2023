@@ -31,7 +31,7 @@ export const EventspageContainer = styled.section`
     color: #fff;
     margin-top: 50px;
     overflow-y: auto;
-  }
+  } 
   .domainEvents {
     display: flex;
     flex-wrap: wrap;

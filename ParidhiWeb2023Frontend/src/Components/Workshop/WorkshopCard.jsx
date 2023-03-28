@@ -41,7 +41,7 @@ const WorkshopCard = (props) => {
           <motion.hr layout="position" />
 
           <motion.div layout="position" className="heading">
-            {props.name || "Coding workshop"}
+            {props.header || "Coding workshop"}
           </motion.div>
           <motion.hr layout="position" />
 

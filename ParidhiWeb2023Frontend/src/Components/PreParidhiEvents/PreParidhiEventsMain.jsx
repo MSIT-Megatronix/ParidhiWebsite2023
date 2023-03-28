@@ -20,7 +20,7 @@ const PreParidhiEventsMain = () => {
             len={130}
             heading="CP practice contest"
             disable={true}
-            registration_link="https://forms.gle/j1LXmS12TwPe72Gu6"
+            registration_link="https://forms.gle/izk6gTF1hyG6d57P9"
           />
         </div>
       </WorkshopContainer>
