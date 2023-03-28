@@ -23,7 +23,7 @@ export const EventspageContainer = styled.section`
   }
   .text {
     /* width: 100%; */
-    padding: 40px 0px 0px 0px;
+    padding: 40px 0px 30px 0px;
     position: relative;
     /* display: flex;
     flex-direction: column;

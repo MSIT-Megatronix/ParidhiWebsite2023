@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 import { PageLoader } from "../../HomePage/components/PreLoader";
 import axios from "axios";
+import events from '../../../assets/response.json'
 const DomainEvents = () => {
   const [open, setOpen] = useState(false);
   const { domain } = useParams();
@@ -35,25 +36,25 @@ const DomainEvents = () => {
   const [domainName, setDomainName] = useState("");
   const [dataAvailable, setDataAvailable] = useState(false);
   const getData = async () => {
-    const response = await axios.get("https://3.110.174.37:8443/events");
+    // const response = await axios.get("https://3.110.174.37:8443/events");
     switch (domain) {
       case "coding":
-        setEventData(response.data.allevents[0].domainevents);
+        setEventData(events.allevents[0].domainevents);
         break;
       case "electrical":
-        setEventData(response.data.allevents[3].domainevents);
+        setEventData(events.allevents[3].domainevents);
         break;
       case "gaming":
-        setEventData(response.data.allevents[2].domainevents);
+        setEventData(events.allevents[2].domainevents);
         break;
       case "robotics":
-        setEventData(response.data.allevents[1].domainevents);
+        setEventData(events.allevents[1].domainevents);
         break;
       case "general":
-        setEventData(response.data.allevents[4].domainevents);
+        setEventData(events.allevents[4].domainevents);
         break;
       case "civil":
-        setEventData(response.data.allevents[5].domainevents);
+        setEventData(events.allevents[5].domainevents);
         break;
       default:
         break;

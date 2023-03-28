@@ -36,7 +36,7 @@ const NavbarMain = () => {
     if (root) {
       root.style.height = menuopen ? "100vh" : "100%";
     }
-  }, [menuopen]);
+  });
   return (
     <>
       {menuopen ? (

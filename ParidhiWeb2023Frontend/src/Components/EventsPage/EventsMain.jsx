@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { CardData } from "./StaticJS/CardData";
 import axios from "axios";
 import { PageLoader } from "../HomePage/components/PreLoader";
-
+import events from '../../assets/response.json'
 const EventsMain = () => {
   const [eventData, setEventData] = useState([]);
   const [map, setMap] = useState(false);
@@ -38,16 +38,17 @@ const EventsMain = () => {
     },
   };
 
-  const getData = async () => {
-    const response = await axios.get("https://3.110.174.37:8443/events");
-    setEventData(response.data.allevents);
-    console.log(response.data.allevents);
-    setMap(true);
-    // console.log(response);
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+  console.log(events);
+  // const getData = async () => {
+  //   const response = await axios.get("https://3.110.174.37:8443/events");
+  //   setEventData(response.data.allevents);
+  //   console.log(response.data.allevents);
+  //   setMap(true);
+  //   // console.log(response);
+  // };
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <>
@@ -57,7 +58,7 @@ const EventsMain = () => {
           <div className="light"></div>
           <div className="grid"></div>
         </div>
-        {map ? (
+         {/* ( */}
           <div className="text">
             <motion.div
               className="events"
@@ -65,25 +66,23 @@ const EventsMain = () => {
               initial="hidden"
               animate="show"
             >
-              {eventData.map((data, index) => {
-                // console.log(data.details);
+              {events.allevents.map((data, index) => {
+                console.log(data);
                 return (
                   <Cards
-                    // bt={data.class}
                     image={data.domainevents[0].DomainPosterLink}
                     details={data.domainevents[0].DomainDesc}
                     name={data.domain}
                     key={index}
-                    // details={data.details}
                     button="events"
                   />
                 );
               })}
             </motion.div>
           </div>
-        ) : (
+        {/* ) : (
           <PageLoader />
-        )}
+        )} */}
       </EventspageContainer>
     </>
   );

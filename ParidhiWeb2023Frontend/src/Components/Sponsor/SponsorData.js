@@ -21,7 +21,7 @@ export const sponsors = [
   { img: tata, name: "refreshment partner" },
   { img: lic, name: "INSURaNCE partner" },
   //   { img: tx, name: "GAMING partner" },
-  { img: w3, name: "GAming partner" },
+  { img: w3, name: "Autonomous Robotics partner" },
   { img: vir, name: "Virtual reality partner" },
   { img: kolkata, name: "Social MEDIA partner" },
   { img: kc, name: "MEDIA partner" },

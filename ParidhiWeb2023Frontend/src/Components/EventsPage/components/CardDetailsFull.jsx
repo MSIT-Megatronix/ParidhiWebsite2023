@@ -5,7 +5,7 @@ import NavbarMain from "../../Navbar/NavbarMain";
 import BiggerCardContainer from "../styles/CardBigger.styled";
 import GamingMain from "../assets/GamingMain.jpeg";
 import { PageLoader } from "../../HomePage/components/PreLoader";
-import PdfViewer from "./PdfViewer";
+import events from "../../../assets/response.json";
 const CardDetailsFull = (props) => {
   // const navigate = useNavigate();
   const moveLight = (e) => {
@@ -20,12 +20,11 @@ const CardDetailsFull = (props) => {
   const [eachEventdetails, setEachEventDetails] = useState([]);
   const [dataAvailable, setDataAvailable] = useState(true);
   const getData = async () => {
-    
-    const response = await axios.get("https://3.110.174.37:8443/events");
+    // const response = await axios.get("https://3.110.174.37:8443/events");
     // console.log(response.data.allevents[1].domainevents[0].EventPosterLink);
     switch (domain) {
       case "coding":
-        response.data.allevents[0].domainevents.forEach((element) => {
+        events.allevents[0].domainevents.forEach((element) => {
           if (event == element.EventName.toLowerCase()) {
             console.log(element.EventName);
             setEachEventDetails(element);
@@ -33,8 +32,8 @@ const CardDetailsFull = (props) => {
           }
         });
       case "electrical":
-        setEventData(response.data.allevents[3].domainevents);
-        response.data.allevents[3].domainevents.forEach((element) => {
+        setEventData(events.allevents[3].domainevents);
+        events.allevents[3].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase()) {
             setEachEventDetails(element);
             console.log(element);
@@ -42,29 +41,29 @@ const CardDetailsFull = (props) => {
         });
         break;
       case "gaming":
-        setEventData(response.data.allevents[2].domainevents);
-        response.data.allevents[2].domainevents.forEach((element) => {
+        setEventData(events.allevents[2].domainevents);
+        events.allevents[2].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
         break;
       case "robotics":
-        setEventData(response.data.allevents[1].domainevents);
-        response.data.allevents[1].domainevents.forEach((element) => {
+        setEventData(events.allevents[1].domainevents);
+        events.allevents[1].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
         break;
       case "general":
-        setEventData(response.data.allevents[4].domainevents);
-        response.data.allevents[4].domainevents.forEach((element) => {
+        setEventData(events.allevents[4].domainevents);
+        events.allevents[4].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
         break;
       case "civil":
-        setEventData(response.data.allevents[5].domainevents);
-        response.data.allevents[5].domainevents.forEach((element) => {
+        setEventData(events.allevents[5].domainevents);
+        events.allevents[5].domainevents.forEach((element) => {
           if (event === element.EventName.toLowerCase())
             setEachEventDetails(element);
         });
