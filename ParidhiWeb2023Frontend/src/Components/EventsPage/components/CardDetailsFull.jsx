@@ -8,11 +8,19 @@ import { PageLoader } from "../../HomePage/components/PreLoader";
 import PdfViewer from "./PdfViewer";
 const CardDetailsFull = (props) => {
   // const navigate = useNavigate();
+  const moveLight = (e) => {
+    const light = document.querySelector(".light");
+    const grid = document.querySelector(".grid");
+    const scrollY = document.documentElement.scrollTop;
+    light.style.left = `${e.clientX}px`;
+    light.style.top = `${e.clientY + scrollY}px`;
+  };
   const { domain, event } = useParams();
   const [eventData, setEventData] = useState([]);
   const [eachEventdetails, setEachEventDetails] = useState([]);
   const [dataAvailable, setDataAvailable] = useState(true);
   const getData = async () => {
+    
     const response = await axios.get("http://localhost:6969/events");
     // console.log(response.data.allevents[1].domainevents[0].EventPosterLink);
     switch (domain) {
