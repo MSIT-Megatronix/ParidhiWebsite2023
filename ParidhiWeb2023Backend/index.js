@@ -1,10 +1,13 @@
 const express = require("express");
 // const connection = require("./database");
+const http = require("http");
 const https = require("https");
 const app = express();
 const router = require("./router");
 const fs = require("fs");
-
+var privateKey  = fs.readFileSync('key.pem');
+var certificate = fs.readFileSync('cert.pem');
+var credentials = {key: privateKey, cert: certificate};
 const port = process.env.PORT || 6969;
 // const cors = require("cors");
 app.use((req, res, next) => {
@@ -31,7 +34,7 @@ var sqlRowstoJSON=(rows)=>{
     for (const key in row) {
       if (Object.hasOwnProperty.call(row, key)) {
         myjson[key] = row[key];
-        
+
       }
     }
     newObj.push(myjson);
@@ -39,8 +42,8 @@ var sqlRowstoJSON=(rows)=>{
   return newObj;
 };
 
-var getDataQuery = `select * from 
-eventlist left join Domains on eventlist.DomainID = Domains.DomainID 
+var getDataQuery = `select * from
+eventlist left join Domains on eventlist.DomainID = Domains.DomainID
 union
 select * from
 eventlist right join Domains on eventlist.DomainID = Domains.DomainID`;
@@ -121,11 +124,7 @@ await connection.query(civQuery,(err, result, field) => {
 // app.listen(port, () => {
 //   console.log(`listening to port ${port}`);
 // });
-https
-  .createServer({
-    key: fs.readFileSync("key.pem"),
-    cert: fs.readFileSync("cert.pem"),
-  },app)
-  .listen(port, ()=>{
-    console.log('server is runing at port '+port)
-  });
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(credentials, app);
+httpServer.listen(8080);
+httpsServer.listen(8443);
