@@ -14,7 +14,9 @@ const WorkshopCard = (props) => {
   );
 
   const [Open, setOpen] = useState(false);
-  const [WorkShopdata,setWorkShopData]=useState(props.data.slice(0,props.len))
+  const [WorkShopdata, setWorkShopData] = useState(
+    props.data.slice(0, props.len)
+  );
   return (
     <WorkshopCardContainer>
       <motion.div
@@ -34,14 +36,14 @@ const WorkshopCard = (props) => {
         >
           <motion.img
             layout="position"
-            src={GamingMain}
+            src={props.image}
             alt=""
             className="poster"
           />
           <motion.hr layout="position" />
 
           <motion.div layout="position" className="heading">
-            {props.header || "Coding workshop"}
+            {props.name || "Coding workshop"}
           </motion.div>
           <motion.hr layout="position" />
 
@@ -58,7 +60,7 @@ const WorkshopCard = (props) => {
             >
               {/* {props.data.slice(0, props.len) || lorem.slice(0, 70)} */}
               {WorkShopdata}
-              {!Open?seeMore:""}
+              {!Open ? seeMore : ""}
             </motion.div>
           ) : (
             <motion.div
@@ -73,16 +75,18 @@ const WorkshopCard = (props) => {
             >
               {props.data || lorem}
 
-              {Open?seeLess:""}
+              {Open ? seeLess : ""}
             </motion.div>
           )}
           <button
             disabled={props.disable}
             onClick={() => {
-              window.open(props.registration_link, "_blank");
+              if (!props.onspot) window.open(props.registration_link, "_blank");
             }}
           >
-            Register
+            {props.disable ? "Registration over" : ""}
+            {props.onspot ? "Registrater Onspot" : ""}
+            {!props.onspot && !props.disable ? "Register " : ""}
           </button>
         </motion.div>
       </motion.div>

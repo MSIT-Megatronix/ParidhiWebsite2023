@@ -47,7 +47,7 @@ export const WorkshopPageContainer = styled.section`
   }
   .carousel_item div .details {
     padding: 15px 0px 10px 0px;
-    text-align: justify;
+    /* text-align: justify; */
   }
 
   @media (min-width: 900px) {

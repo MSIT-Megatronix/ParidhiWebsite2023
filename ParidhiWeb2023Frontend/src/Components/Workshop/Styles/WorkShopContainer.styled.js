@@ -42,7 +42,7 @@ export const WorkshopCardContainer = styled.div`
   .details {
     /* font-size: rem; */
     text-transform: capitalize;
-    text-align: justify;
+    /* text-align: justify; */
   }
   button {
     margin-top: 10px;

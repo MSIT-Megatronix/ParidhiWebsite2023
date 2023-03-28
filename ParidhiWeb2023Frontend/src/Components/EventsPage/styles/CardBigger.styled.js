@@ -55,7 +55,7 @@ const BiggerCardContainer = styled.section`
   }
   .details {
     padding: 15px 0px 10px 0px;
-    text-align: justify;
+    /* text-align: ; */
   }
   @media (min-width: 900px) {
     .text{

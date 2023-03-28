@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import megalogo from "./assets/megalogowithstroke.png";
 import NavbarContainer, {
@@ -30,6 +30,13 @@ const item = {
 const NavbarMain = () => {
   const Navigate = useNavigate();
   const [menuopen, setMenuopen] = useState(false);
+  useEffect(() => {
+    console.log(menuopen);
+    const root = document.getElementById("root");
+    if (root) {
+      root.style.height = menuopen ? "100vh" : "100%";
+    }
+  }, [menuopen]);
   return (
     <>
       {menuopen ? (
