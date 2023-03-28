@@ -22,7 +22,7 @@ const Sponsor = () => {
         <div className="text">
           {sponsors.map((data,index) => {
             return (
-              <div className="sponsor" key={data.names+data.index}>
+              <div className="sponsor" key={data.names+index}>
                 <img
                   src={data.img}
                   alt=""
