@@ -6,6 +6,7 @@ const WorkshopContainer = styled.section`
   position: relative;
   overflow-y: hidden;
   overflow-x: hidden;
+  background: #202020;
   .text {
     margin-top: 70px;
     display: flex;

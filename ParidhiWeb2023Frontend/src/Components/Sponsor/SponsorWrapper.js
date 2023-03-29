@@ -12,12 +12,15 @@ export const SponsorWrapper = styled.section`
     z-index: 2;
     width: 100vw;
     height: 100%;
-    overflow-x: hidden;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     padding-bottom: 30px;
+    .card_div {
+      overflow-x: hidden;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .sponsor {
       padding: 5px 10px;
       display: flex;

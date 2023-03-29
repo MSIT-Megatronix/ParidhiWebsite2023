@@ -27,6 +27,19 @@ const PreParidhiEventsMain = () => {
           />
           <WorkshopCard
             image={
+              "https://paridhinewbucket.s3.ap-south-1.amazonaws.com/mainDomain/WhatsApp+Image+2023-03-29+at+9.45.52+AM.jpeg"
+            }
+            data={
+              "Gear up for ultimate Pre-Paridhi event before the main showdown at Paridhi 2023!! Megatronix presents to you the Doodling Pre-Paridhi event on 29th&30th March to portray your artistic skills before the mega event. Rules: a) Draw and post your pictures on fb and tag Paridhi 2023 on your post. (The Picture should follow a theme of your choosing) b) Give hashtags #Paridhi2023 and #megatronix c) Selected doodle artists will win exclusive goodies. Don't miss this opportunity and experience the excitement before! Contact: MEGHA RANJAN - 8240960460 ANIKET BANERJEE - 9330481602"
+            }
+            len={150}
+            name={"Sketch It"}
+            disable={true}
+            disableMsg={"Registration not required"}
+            // registration_link={""}
+          />
+          <WorkshopCard
+            image={
               "https://paridhinewbucket.s3.ap-south-1.amazonaws.com/mainDomain/CodingMain.jpeg"
             }
             data={

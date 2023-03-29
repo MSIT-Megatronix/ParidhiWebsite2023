@@ -84,7 +84,7 @@ const WorkshopCard = (props) => {
               if (!props.onspot) window.open(props.registration_link, "_blank");
             }}
           >
-            {props.disable ? "Registration over" : ""}
+            {props.disable ? props.disableMsg || "Registration over" : ""}
             {props.onspot ? "Registrater Onspot" : ""}
             {!props.onspot && !props.disable ? "Register " : ""}
           </button>
