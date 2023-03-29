@@ -1102,7 +1102,7 @@ export var team = [
     Username: "malrahul454@gmail.com",
     "1.WHICH YEAR ?": 2,
     "2.DESIGNATION": "MEGATRON",
-    "3.INSTAGRAM ID": "___raaahulll___",
+    "3.INSTAGRAM ID": "https://www.instagram.com/___raaahulll___",
     "4.LINKEDIN ID": "Rahul Mal",
     "5.FACEBOOK ID": "রা হু ল",
     "6.NAME": "Rahul Mal",
@@ -1286,7 +1286,7 @@ export var team = [
     "ADD PHOTO":
       "https://drive.google.com/open?id=1B1a0X-HN336rohmFAXiUGCj006uaR4iM",
   },
-  
+
   {
     Timestamp: 45013.38131644676,
     Username: "shreyaraha002@gmail.com",
