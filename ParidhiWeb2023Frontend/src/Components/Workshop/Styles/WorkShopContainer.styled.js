@@ -11,6 +11,7 @@ const WorkshopContainer = styled.section`
     margin-top: 70px;
     display: flex;
     justify-content: center;
+    color: #fff;
     /* align-items: center; */
     flex-wrap: wrap;
   }
@@ -22,6 +23,7 @@ export const WorkshopCardContainer = styled.div`
   z-index: 2;
   margin: 10px 20px;
   .card {
+    color: #fff;
     padding: 10px;
     backdrop-filter: blur(0px) saturate(180%);
     -webkit-backdrop-filter: blur(0px) saturate(180%);
@@ -43,6 +45,8 @@ export const WorkshopCardContainer = styled.div`
   .details {
     /* font-size: rem; */
     text-transform: capitalize;
+    color: #fff;
+
     /* text-align: justify; */
   }
   button {

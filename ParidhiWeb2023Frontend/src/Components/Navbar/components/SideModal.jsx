@@ -11,6 +11,7 @@ const SideModal = () => {
       <div className="nav-items">
         {menuopen === "block" ? (
           <CloseRoundedIcon
+            sx={{ color: "#fff" }}
             className="toggle"
             onClick={() => {
               setMenupen("none");
@@ -18,6 +19,7 @@ const SideModal = () => {
           />
         ) : (
           <MenuRoundedIcon
+            sx={{ color: "#fff" }}
             className="toggle"
             onClick={() => {
               setMenupen("block");

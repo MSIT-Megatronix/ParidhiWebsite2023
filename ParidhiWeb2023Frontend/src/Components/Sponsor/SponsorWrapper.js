@@ -12,6 +12,7 @@ export const SponsorWrapper = styled.section`
     z-index: 2;
     width: 100vw;
     height: 100%;
+    color: #fff;
 
     padding-bottom: 30px;
     .card_div {

@@ -15,6 +15,7 @@ const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
 );
+
 const LazyTeams = React.lazy(() => import("./Components/TeamPage/TeamMain"));
 function App() {
   return (

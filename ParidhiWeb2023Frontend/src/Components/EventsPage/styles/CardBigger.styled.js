@@ -21,6 +21,7 @@ const BiggerCardContainer = styled.section`
     -webkit-backdrop-filter: blur(0px) saturate(180%);
     background-color: rgba(0, 0, 0, 0.75);
     /* border-radius: 12px; */
+    color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
   .team-size{

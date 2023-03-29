@@ -6,7 +6,7 @@ export const WorkshopPageContainer = styled.section`
   /* position: relative; */
   /* overflow-y: hidden; */
   overflow-x: hidden;
-  background: #242424;
+  background: #2b2b2b;
 
   .text {
     /* width: 100vw; */
