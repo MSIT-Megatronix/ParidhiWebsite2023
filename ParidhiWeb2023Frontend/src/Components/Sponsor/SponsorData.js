@@ -7,7 +7,6 @@ import me from "./assets/madeeasy.png";
 import mc from "./assets/mc.png";
 import radio from "./assets/radio.png";
 import tata from "./assets/tata.png";
-import tx from "./assets/teamXenon.png";
 import upg from "./assets/upg.png";
 import vir from "./assets/Virtualism.png";
 import w3 from "./assets/w3.png";
