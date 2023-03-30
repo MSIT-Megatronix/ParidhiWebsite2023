@@ -11,6 +11,8 @@ import PreParidhiEventsMain from "./Components/PreParidhiEvents/PreParidhiEvents
 import NavbarMain from "./Components/Navbar/NavbarMain";
 import PdfViewer from "./Components/EventsPage/components/PdfViewer";
 import Sponsor from "./Components/Sponsor/Sponsor";
+import Mrd from "./Components/MRD/Mrd";
+import MRDMAIN from "./Components/MRD/MRDMAIN";
 const LazyHome = React.lazy(() => import("./Components/HomePage/HomeMain"));
 const LazyEvents = React.lazy(() =>
   import("./Components/EventsPage/EventsMain")
@@ -62,6 +64,7 @@ function App() {
             </React.Suspense>
           }
         />
+        <Route path="/register" element={<MRDMAIN/>} />
         <Route
           path="/sponsors"
           element={
